@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { Mail, Phone } from "lucide-react";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { SectionHeading } from "@/components/shared/SectionHeading";
-import { LeadForm } from "@/components/shared/LeadForm";
+import { ContactForm } from "@/components/shared/ContactForm";
+import { FaqSection } from "@/components/home/FaqSection";
+import { CtaBanner } from "@/components/shared/CtaBanner";
 import { Reveal } from "@/components/Reveal";
-import { CONTACT_INFO } from "@/data/pages";
 
 export const metadata: Metadata = {
   title: "Contact — Careloop",
@@ -15,30 +16,49 @@ export default function ContactPage() {
     <>
       <PageHeader
         tag="Contact"
-        title="Let's talk about lasting change"
-        subtitle="Questions, partnerships or press — we'd love to hear from you."
+        title="Get in Touch with Us"
+        subtitle="We value your experience with Careloop and want to understand your needs better."
       />
 
-      <section className="section-y">
-        <div className="container-careloop grid items-start gap-12 lg:grid-cols-[0.9fr_1.1fr]">
+      <section className="section-y pt-0">
+        <div className="container-careloop grid items-start gap-12 lg:grid-cols-2">
           <div>
-            <SectionHeading tag="Reach us" title="We're here to help" />
-            <ul className="mt-8 space-y-6">
-              {CONTACT_INFO.map((info, i) => (
-                <Reveal as="li" key={info.label} delay={i * 80}>
-                  <span className="block text-sm font-bold uppercase tracking-wide text-green-600">
-                    {info.label}
-                  </span>
-                  <span className="mt-1 block text-lg font-semibold text-ink">{info.value}</span>
-                </Reveal>
-              ))}
-            </ul>
+            <span className="inline-block rounded-full bg-ink/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-green-700">
+              Send us a message
+            </span>
+            <p className="mt-6 max-w-md text-green-600">
+              Whether you have a question, want to get involved, or need more information about
+              our programs, the Careloop team is always happy to hear from you.
+            </p>
+
+            <div className="mt-10 grid gap-8 sm:grid-cols-2">
+              <Reveal className="flex flex-col gap-3">
+                <span className="grid size-11 place-items-center rounded-xl bg-green-700 text-cream">
+                  <Mail className="size-5" />
+                </span>
+                <span className="text-sm font-bold uppercase tracking-wide text-ink">Email us</span>
+                <span className="text-sm text-green-600">For more information about our charitable initiatives.</span>
+                <span className="font-semibold text-orange">hello@careloop.org</span>
+              </Reveal>
+              <Reveal delay={100} className="flex flex-col gap-3">
+                <span className="grid size-11 place-items-center rounded-xl bg-green-700 text-cream">
+                  <Phone className="size-5" />
+                </span>
+                <span className="text-sm font-bold uppercase tracking-wide text-ink">Call us</span>
+                <span className="text-sm text-green-600">Available Monday to Friday, 9:00 am to 5:00 pm.</span>
+                <span className="font-semibold text-orange">+1 (415) 555-0189</span>
+              </Reveal>
+            </div>
           </div>
+
           <Reveal delay={120}>
-            <LeadForm submitLabel="send message" />
+            <ContactForm />
           </Reveal>
         </div>
       </section>
+
+      <FaqSection />
+      <CtaBanner />
     </>
   );
 }
