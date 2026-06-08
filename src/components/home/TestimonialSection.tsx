@@ -5,7 +5,7 @@ import type { Testimonial } from "@/types";
 
 function Card({ t }: { t: Testimonial }) {
   return (
-    <figure className="w-[420px] shrink-0 rounded-3xl bg-white p-8">
+    <figure className="w-[320px] shrink-0 rounded-3xl bg-white p-7 sm:w-[420px] sm:p-8">
       <blockquote className="text-lg font-medium leading-relaxed text-ink">“{t.quote}”</blockquote>
       <figcaption className="mt-6 flex items-center gap-3">
         <span className="relative size-12 overflow-hidden rounded-full">
@@ -28,7 +28,7 @@ export function TestimonialSection() {
         <SectionHeading align="center" tag="Testimonials" title="What people say about our work" />
       </div>
       <div className="marquee-mask mt-14 overflow-hidden">
-        <div className="flex w-max gap-6 animate-marquee">
+        <div className="flex w-max gap-6 animate-marquee hover:[animation-play-state:paused]">
           {loop.map((t, i) => (
             <Card key={`${t.name}-${i}`} t={t} />
           ))}
