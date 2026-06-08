@@ -1,7 +1,9 @@
+import Image from "next/image";
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/shared/PageHeader";
+import { SectionHeading } from "@/components/shared/SectionHeading";
 import { DonationForm } from "@/components/donation/DonationForm";
-import { ProgramSection } from "@/components/home/ProgramSection";
+import { CtaBanner } from "@/components/shared/CtaBanner";
 import { Reveal } from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -9,10 +11,10 @@ export const metadata: Metadata = {
   description: "Make a one-time or monthly donation and fund lasting change.",
 };
 
-const POINTS = [
-  "Every dollar is tracked and reported back to you.",
-  "Funds go to active programs and verified field partners.",
-  "Monthly giving keeps programs running all year.",
+const USAGE = [
+  { title: "Food and nutrition support", image: "/images/donate-prog-1.png" },
+  { title: "Disaster relief and recovery", image: "/images/donate-prog-2.png" },
+  { title: "Health and medical access", image: "/images/donate-prog-3.png" },
 ];
 
 export default function DonationPage() {
@@ -20,37 +22,77 @@ export default function DonationPage() {
     <>
       <PageHeader
         tag="Donate"
-        title="Make a donation today"
-        subtitle="Donations start from $20. Make it a one-time gift or support us monthly to keep programs running."
+        title="Make a donation"
+        subtitle="We value your support. Choose how you'd like to give and where your gift goes."
       />
 
-      <section className="section-y">
-        <div className="container-careloop grid items-start gap-12 lg:grid-cols-2">
-          <Reveal>
-            <h2 className="font-display text-[clamp(2rem,4vw,3.5rem)] leading-[0.98] text-ink">
-              Your gift, working consistently.
-            </h2>
-            <p className="mt-6 text-lg text-green-600">
-              We turn contributions into durable support — food, healthcare, education and
-              disaster relief delivered again and again to the communities that need it.
-            </p>
-            <ul className="mt-8 space-y-4">
-              {POINTS.map((p, i) => (
-                <Reveal as="li" key={p} delay={i * 80} className="flex items-start gap-3">
-                  <span className="mt-1 size-2.5 shrink-0 rounded-full bg-orange" />
-                  <span className="font-medium text-ink">{p}</span>
-                </Reveal>
-              ))}
-            </ul>
+      {/* Why your support matters */}
+      <section className="section-y pt-0">
+        <div className="container-careloop grid items-center gap-12 lg:grid-cols-2">
+          <Reveal className="relative aspect-[611/520] overflow-hidden rounded-[2rem]">
+            <Image src="/images/donate-impact.png" alt="A child supported by Careloop" fill className="object-cover" sizes="(max-width:1024px) 100vw, 600px" />
           </Reveal>
-
-          <Reveal delay={120}>
-            <DonationForm />
-          </Reveal>
+          <div>
+            <SectionHeading tag="Make a bigger impact" title="Why your support matters?" />
+            <div className="mt-6 space-y-4 text-green-600">
+              <p>
+                Monthly donations help Careloop plan ahead, respond faster and sustain the
+                programs that communities rely on — well beyond the first wave of attention.
+              </p>
+              <p>
+                Your gift responds quickly to urgent needs while building long-term resilience,
+                with transparency and accountability at every step.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <ProgramSection />
+      {/* Donate form */}
+      <section className="px-3 py-3">
+        <div className="relative overflow-hidden rounded-[2rem] bg-ink">
+          <div className="container-careloop section-y">
+            <SectionHeading
+              align="center"
+              tone="cream"
+              tag="Make a difference"
+              title="Make a difference"
+              text="Making a real difference is something we can all contribute to — through time, skills or financial support."
+            />
+            <Reveal className="mx-auto mt-12 max-w-2xl">
+              <DonationForm />
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* How your donation is used */}
+      <section className="section-y">
+        <div className="container-careloop">
+          <SectionHeading align="center" tag="Transparency" title="How your donation is used?" />
+          <div className="mt-14 grid gap-6 md:grid-cols-3">
+            {USAGE.map((u, i) => (
+              <Reveal key={u.title} delay={i * 90}>
+                <article className="overflow-hidden rounded-3xl bg-white p-3">
+                  <div className="relative aspect-[390/300] overflow-hidden rounded-2xl">
+                    <Image src={u.image} alt={u.title} fill className="object-cover" sizes="(max-width:1024px) 100vw, 400px" />
+                  </div>
+                  <div className="flex items-center gap-3 px-3 py-5">
+                    <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-orange text-white">
+                      <svg viewBox="0 0 24 24" className="size-5" fill="currentColor" aria-hidden>
+                        <path d="M12 21s-7-4.5-9.3-9C1.2 9 2.6 6 5.5 6c1.8 0 2.9 1 3.5 2 .6-1 1.7-2 3.5-2 2.9 0 4.3 3 2.8 6-2.3 4.5-9.3 9-9.3 9z" />
+                      </svg>
+                    </span>
+                    <h3 className="font-sans text-lg font-bold leading-tight text-ink">{u.title}</h3>
+                  </div>
+                </article>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CtaBanner />
     </>
   );
 }
