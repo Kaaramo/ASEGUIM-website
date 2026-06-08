@@ -22,11 +22,12 @@ export function Reveal({ children, className, delay = 0, as }: RevealProps) {
     const node = ref.current;
     if (!node) return;
 
-    // Reveal immediately if already within (or above) the viewport on mount.
+    // Reveal if already within (or above) the viewport on mount (deferred to avoid
+    // a synchronous state update inside the effect).
     const rect = node.getBoundingClientRect();
     if (rect.top < (window.innerHeight || 0) * 0.92) {
-      setVisible(true);
-      return;
+      const raf = requestAnimationFrame(() => setVisible(true));
+      return () => cancelAnimationFrame(raf);
     }
 
     const obs = new IntersectionObserver(
