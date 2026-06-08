@@ -42,8 +42,7 @@ export default function RootLayout({
       <body className="min-h-full">
         <SmoothScroll />
         <Navbar />
-        {/* Offset for fixed announcement bar (40px) + nav (~72px) */}
-        <main className="pt-[7.5rem]">{children}</main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>

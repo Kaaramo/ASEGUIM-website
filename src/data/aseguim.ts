@@ -16,8 +16,6 @@ export const NAV = [
   { label: "Accueil", href: "/" },
   { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
   { label: "Nos domaines", href: "/nos-domaines" },
-  { label: "Talents", href: "/talents" },
-  { label: "Actualités", href: "/actualites" },
 ];
 
 export const HISTOIRE = {

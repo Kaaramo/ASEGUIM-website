@@ -13,10 +13,10 @@ export function DomainesSection() {
           title="Découvrez les différents aspects de notre engagement"
           text="Découvrez les différents aspects de notre engagement envers la communauté estudiantine."
         />
-        <div className="mt-14 grid gap-6 sm:grid-cols-2">
+        <div className="mt-14 grid gap-6 sm:auto-rows-fr sm:grid-cols-2">
           {DOMAINES.map((d, i) => (
-            <Reveal key={d.slug} delay={(i % 2) * 100}>
-              <article className="group overflow-hidden rounded-3xl bg-white p-3">
+            <Reveal key={d.slug} delay={(i % 2) * 100} className="h-full">
+              <article className="group flex h-full flex-col overflow-hidden rounded-3xl bg-white p-3">
                 <div className="relative aspect-[16/10] overflow-hidden rounded-2xl">
                   <Image
                     src={d.image}
@@ -29,7 +29,7 @@ export function DomainesSection() {
                     {d.nom}
                   </span>
                 </div>
-                <p className="px-3 pb-3 pt-5 text-green-600">{d.description}</p>
+                <p className="flex-1 px-3 pb-3 pt-5 text-green-600">{d.description}</p>
               </article>
             </Reveal>
           ))}

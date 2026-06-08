@@ -16,13 +16,8 @@ export function Logo({
       <span className="relative size-10 shrink-0 overflow-hidden rounded-full ring-2 ring-white/70">
         <Image src={SITE.logo} alt="ASEGUIM" fill className="object-cover" sizes="40px" priority />
       </span>
-      <span className="leading-tight">
-        <span className={cn("block font-display text-xl tracking-wide", tone === "cream" ? "text-cream" : "text-ink")}>
-          ASEGUIM
-        </span>
-        <span className={cn("block text-[0.65rem] font-semibold uppercase tracking-wider", tone === "cream" ? "text-cream/60" : "text-green-700")}>
-          Maroc
-        </span>
+      <span className={cn("font-display text-xl tracking-wide", tone === "cream" ? "text-cream" : "text-ink")}>
+        ASEGUIM
       </span>
     </Link>
   );
