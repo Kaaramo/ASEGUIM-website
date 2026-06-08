@@ -44,7 +44,7 @@ export function Footer() {
             alt="Careloop"
             width={561}
             height={93}
-            className="h-auto w-full max-w-[720px] opacity-95 invert"
+            className="h-auto w-full max-w-[720px] opacity-90 brightness-0 invert"
           />
           <p className="mt-8 text-sm text-cream/60">
             Copyright © 2026 Careloop. All Rights Reserved.
