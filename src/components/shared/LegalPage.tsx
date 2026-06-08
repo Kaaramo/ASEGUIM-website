@@ -16,7 +16,7 @@ export function LegalPage({
 }) {
   return (
     <>
-      <PageHeader tag={tag} title={title} subtitle={`Last updated: ${updated}`} />
+      <PageHeader tag={tag} title={title} subtitle={`Dernière mise à jour : ${updated}`} />
       <section className="section-y">
         <div className="container-careloop max-w-3xl space-y-10">
           {sections.map((s) => (
@@ -26,8 +26,8 @@ export function LegalPage({
             </div>
           ))}
           <p className="border-t border-ink/10 pt-8 text-sm text-green-600">
-            This is placeholder template copy for demonstration only and is not legal advice.
-            Replace it with your organization&apos;s own policy before publishing.
+            Ce texte est fourni à titre indicatif et devra être validé par l&apos;ASEGUIM avant
+            publication.
           </p>
         </div>
       </section>

@@ -11,7 +11,8 @@ type RevealProps = {
   as?: ElementType;
 };
 
-/** Wraps content with a scroll-triggered fade/slide-up reveal (IntersectionObserver). */
+/** Wraps content with a scroll-triggered fade/slide-up reveal (IntersectionObserver),
+ *  with a robust fallback so content is never left permanently hidden. */
 export function Reveal({ children, className, delay = 0, as }: RevealProps) {
   const Tag = (as ?? "div") as ElementType;
   const ref = useRef<HTMLElement | null>(null);
@@ -20,6 +21,14 @@ export function Reveal({ children, className, delay = 0, as }: RevealProps) {
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
+
+    // Reveal immediately if already within (or above) the viewport on mount.
+    const rect = node.getBoundingClientRect();
+    if (rect.top < (window.innerHeight || 0) * 0.92) {
+      setVisible(true);
+      return;
+    }
+
     const obs = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -29,10 +38,26 @@ export function Reveal({ children, className, delay = 0, as }: RevealProps) {
           }
         });
       },
-      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" },
+      { threshold: 0.1, rootMargin: "0px 0px -8% 0px" },
     );
     obs.observe(node);
-    return () => obs.disconnect();
+
+    // Safety net: if the observer never fires (e.g. odd scroll contexts),
+    // reveal once the element has been scrolled near, via a passive listener.
+    const onScroll = () => {
+      const r = node.getBoundingClientRect();
+      if (r.top < (window.innerHeight || 0) * 0.95) {
+        setVisible(true);
+        window.removeEventListener("scroll", onScroll);
+        obs.disconnect();
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    return () => {
+      obs.disconnect();
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   return (

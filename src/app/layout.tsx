@@ -19,15 +19,15 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://careloop.example.com"),
-  title: "Careloop — Non Profit Organization",
+  metadataBase: new URL("https://aseguim.org"),
+  title: "ASEGUIM — Association des Stagiaires et Étudiants Guinéens au Maroc",
   description:
-    "Careloop is a non-profit organization dedicated to creating lasting change through food security, healthcare access, education and disaster relief.",
-  icons: { icon: "/seo/favicon-1.png" },
+    "L'ASEGUIM est le pont d'excellence entre la réussite académique et l'épanouissement culturel des étudiants guinéens au Maroc. Depuis 1981.",
+  icons: { icon: "/aseguim/logo.jpeg" },
   openGraph: {
-    title: "Careloop — Non Profit Organization",
-    description: "Building brighter, safer futures through consistent community care.",
-    images: ["/seo/og.png"],
+    title: "ASEGUIM — Façonnons l'Avenir Ensemble",
+    description: "La plateforme de référence des étudiants guinéens au Maroc.",
+    images: ["/aseguim/logo.jpeg"],
   },
 };
 

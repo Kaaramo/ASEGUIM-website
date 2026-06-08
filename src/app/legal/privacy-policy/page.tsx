@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/shared/LegalPage";
 
-export const metadata: Metadata = { title: "Privacy Policy — Careloop" };
+export const metadata: Metadata = { title: "Politique de confidentialité — ASEGUIM" };
 
 export default function PrivacyPolicy() {
   return (
     <LegalPage
-      tag="Legal"
-      title="Privacy Policy"
-      updated="January 2026"
+      tag="Mentions légales"
+      title="Politique de confidentialité"
+      updated="Janvier 2026"
       sections={[
-        { heading: "Overview", body: "This policy explains, in general terms, what information a non-profit organization like Careloop might collect and how it could be used. It is template copy for this demo." },
-        { heading: "Information we collect", body: "Typical examples include the name, email and payment details you provide when donating or volunteering, plus basic analytics about how the site is used." },
-        { heading: "How information is used", body: "Information would be used to process donations, coordinate volunteers, send updates you opt into, and improve the experience of the site." },
-        { heading: "Your choices", body: "You would be able to request access to, correction of, or deletion of your data, and to unsubscribe from communications at any time." },
+        { heading: "Aperçu", body: "Cette politique explique, en termes généraux, quelles informations l'ASEGUIM peut collecter et comment elles sont utilisées." },
+        { heading: "Informations collectées", body: "Il s'agit notamment des nom, email et données fournies lors d'une adhésion, d'un don ou d'une demande de partenariat, ainsi que de statistiques d'usage du site." },
+        { heading: "Utilisation des informations", body: "Les informations servent à traiter les adhésions, coordonner les activités, envoyer des communications auxquelles vous consentez et améliorer le site." },
+        { heading: "Vos droits", body: "Vous pouvez demander l'accès, la rectification ou la suppression de vos données, et vous désinscrire des communications à tout moment." },
       ]}
     />
   );

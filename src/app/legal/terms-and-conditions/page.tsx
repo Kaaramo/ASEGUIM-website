@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/shared/LegalPage";
 
-export const metadata: Metadata = { title: "Terms of Service — Careloop" };
+export const metadata: Metadata = { title: "Conditions d'utilisation — ASEGUIM" };
 
 export default function TermsAndConditions() {
   return (
     <LegalPage
-      tag="Legal"
-      title="Terms of Service"
-      updated="January 2026"
+      tag="Mentions légales"
+      title="Conditions d'utilisation"
+      updated="Janvier 2026"
       sections={[
-        { heading: "Acceptance of terms", body: "By using this demo website you agree, in general terms, to use it lawfully and respectfully. This is template copy for demonstration." },
-        { heading: "Donations", body: "Donations described here are illustrative. In a real deployment, terms would describe processing, refunds and receipts for contributions." },
-        { heading: "Content", body: "Text and images in this demo reproduce the layout of a template for technical purposes and should be replaced with your own content." },
-        { heading: "Limitation of liability", body: "A real policy would set out the limits of the organization's liability and the governing law for any disputes." },
+        { heading: "Acceptation des conditions", body: "En utilisant ce site, vous acceptez de l'utiliser de manière licite et respectueuse." },
+        { heading: "Adhésions et dons", body: "Les adhésions et dons décrits sur ce site sont gérés par l'ASEGUIM. Les modalités de traitement et de reçu sont communiquées lors de la procédure." },
+        { heading: "Contenu", body: "Les textes et visuels de ce site appartiennent à l'ASEGUIM et ne peuvent être réutilisés sans autorisation." },
+        { heading: "Limitation de responsabilité", body: "L'ASEGUIM met tout en œuvre pour assurer l'exactitude des informations, sans garantie d'exhaustivité." },
       ]}
     />
   );

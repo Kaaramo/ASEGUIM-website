@@ -1,21 +1,29 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { SITE } from "@/data/aseguim";
 
-/** Careloop wordmark logo, links home. `variant="wordmark"` uses the large footer mark. */
+/** ASEGUIM logo: round mark + wordmark. `tone="cream"` for dark backgrounds. */
 export function Logo({
   className,
-  variant = "default",
+  tone = "ink",
 }: {
   className?: string;
-  variant?: "default" | "wordmark";
+  tone?: "ink" | "cream";
 }) {
-  const src = variant === "wordmark" ? "/images/logo-wordmark.svg" : "/images/logo.svg";
-  const width = variant === "wordmark" ? 561 : 148;
-  const height = variant === "wordmark" ? 93 : 24;
   return (
-    <Link href="/" className={cn("inline-flex items-center", className)} aria-label="Careloop home">
-      <Image src={src} alt="Careloop" width={width} height={height} priority className="h-auto w-full" />
+    <Link href="/" className={cn("inline-flex items-center gap-3", className)} aria-label="ASEGUIM — accueil">
+      <span className="relative size-10 shrink-0 overflow-hidden rounded-full ring-2 ring-white/70">
+        <Image src={SITE.logo} alt="ASEGUIM" fill className="object-cover" sizes="40px" priority />
+      </span>
+      <span className="leading-tight">
+        <span className={cn("block font-display text-xl tracking-wide", tone === "cream" ? "text-cream" : "text-ink")}>
+          ASEGUIM
+        </span>
+        <span className={cn("block text-[0.65rem] font-semibold uppercase tracking-wider", tone === "cream" ? "text-cream/60" : "text-green-700")}>
+          Maroc
+        </span>
+      </span>
     </Link>
   );
 }

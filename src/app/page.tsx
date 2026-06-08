@@ -1,33 +1,28 @@
-import { Hero } from "@/components/home/Hero";
-import { DonateSpotlight } from "@/components/home/DonateSpotlight";
-import { AboutSection } from "@/components/home/AboutSection";
-import { ProgramSection } from "@/components/home/ProgramSection";
-import { ImpactSection } from "@/components/home/ImpactSection";
-import { DifferenceSection } from "@/components/home/DifferenceSection";
-import { CaseStudy } from "@/components/home/CaseStudy";
-import { OurNumberSection } from "@/components/home/OurNumberSection";
-import { TestimonialSection } from "@/components/home/TestimonialSection";
-import { GuidingStarSection } from "@/components/home/GuidingStarSection";
-import { BlogSection } from "@/components/home/BlogSection";
-import { FaqSection } from "@/components/home/FaqSection";
+import { Hero } from "@/components/aseguim/Hero";
+import { MissionSection } from "@/components/aseguim/MissionSection";
+import { DomainesSection } from "@/components/aseguim/DomainesSection";
+import { ChiffresSection } from "@/components/aseguim/ChiffresSection";
+import { ImplicationSection } from "@/components/aseguim/ImplicationSection";
+import { TalentsPreview } from "@/components/aseguim/TalentsPreview";
+import { PartenairesSection } from "@/components/aseguim/PartenairesSection";
 import { CtaBanner } from "@/components/shared/CtaBanner";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <DonateSpotlight />
-      <AboutSection />
-      <ProgramSection />
-      <ImpactSection />
-      <DifferenceSection />
-      <CaseStudy />
-      <OurNumberSection />
-      <TestimonialSection />
-      <GuidingStarSection />
-      <BlogSection />
-      <FaqSection />
-      <CtaBanner />
+      <MissionSection />
+      <DomainesSection />
+      <ChiffresSection />
+      <ImplicationSection />
+      <TalentsPreview />
+      <PartenairesSection />
+      <CtaBanner
+        title="Rejoignez l'ASEGUIM"
+        text="ASEGUIMIEN pour un jour, ASEGUIMIEN pour toujours. Devenez membre du plus grand réseau étudiant guinéen au Maroc."
+        ctaLabel="Adhérer maintenant"
+        ctaHref="/adhesion"
+      />
     </>
   );
 }
