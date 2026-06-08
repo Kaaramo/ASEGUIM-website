@@ -13,10 +13,6 @@ export const metadata: Metadata = {
 
 const INIT_ICONS = [Video, Mic, CalendarDays];
 
-function initials(name: string) {
-  return name.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase();
-}
-
 export default function CommissionScientifique() {
   return (
     <>
@@ -64,33 +60,12 @@ export default function CommissionScientifique() {
         </div>
       </section>
 
-      {/* Équipe */}
-      <section className="section-y">
-        <div className="container-careloop">
-          <SectionHeading align="center" tag="L'équipe" title="L'équipe de la Commission Scientifique Nationale" />
-          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {CS.equipe.map((m, i) => (
-              <Reveal key={m.nom} delay={(i % 3) * 70}>
-                <div className="flex items-center gap-4 rounded-2xl bg-white p-5">
-                  <span className="grid size-12 shrink-0 place-items-center rounded-full bg-ink font-display text-lg text-cream">
-                    {initials(m.nom)}
-                  </span>
-                  <div>
-                    <p className="font-sans font-bold text-ink">{m.nom}</p>
-                    <p className="text-sm text-green-600">{m.role}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <CtaBanner
         title="Rejoignez notre communauté scientifique"
         text="Participez à nos événements et développez vos compétences avec la Commission Scientifique Nationale."
         ctaLabel="Nous rejoindre"
-        ctaHref="/adhesion"
+        ctaHref={CS.facebook}
+        external
       />
     </>
   );

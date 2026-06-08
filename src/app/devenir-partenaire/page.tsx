@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Heart } from "lucide-react";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { PartenaireForm } from "@/components/aseguim/PartenaireForm";
@@ -32,10 +33,20 @@ export default function DevenirPartenaire() {
                 culturelle et sportive depuis 1981.
               </p>
             </Reveal>
-            <p className="mt-6 text-sm font-bold uppercase tracking-wide text-green-700">Ils nous font déjà confiance</p>
-            <p className="mt-2 text-green-600">
-              {PARTENAIRES.map((p) => p.nom).join(" · ")}
-            </p>
+            <p className="mt-8 text-sm font-bold uppercase tracking-wide text-green-700">Ils nous font déjà confiance</p>
+            <div className="mt-4 grid grid-cols-3 gap-3 sm:grid-cols-4">
+              {PARTENAIRES.map((p) => (
+                <div key={p.nom} className="flex aspect-[4/3] items-center justify-center rounded-2xl bg-white p-3">
+                  <Image
+                    src={p.logo}
+                    alt={p.nom}
+                    width={120}
+                    height={90}
+                    className="max-h-full w-auto object-contain"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
           <Reveal delay={120}>
             <PartenaireForm />

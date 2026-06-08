@@ -30,11 +30,18 @@ type PillProps = VariantProps<typeof pill> & {
   className?: string;
   /** Show the circular arrow badge on the right. */
   arrow?: boolean;
+  /** Open in a new tab (external link). */
+  external?: boolean;
 };
 
-export function Pill({ href, children, variant, size, className, arrow }: PillProps) {
+export function Pill({ href, children, variant, size, className, arrow, external }: PillProps) {
   return (
-    <Link href={href} className={cn(pill({ variant, size }), arrow && "pr-2", className)}>
+    <Link
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noopener noreferrer" : undefined}
+      className={cn(pill({ variant, size }), arrow && "pr-2", className)}
+    >
       <span>{children}</span>
       {arrow && (
         <span className="grid size-8 place-items-center rounded-full bg-white/15 transition-transform duration-200 group-hover:rotate-45">

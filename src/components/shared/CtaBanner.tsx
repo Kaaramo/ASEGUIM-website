@@ -19,11 +19,13 @@ export function CtaBanner({
   text = "Creating meaningful change is a shared effort. Whether through time, skills or financial support — there's a place for you.",
   ctaLabel = "support us",
   ctaHref = "/donation",
+  external = false,
 }: {
   title?: string;
   text?: string;
   ctaLabel?: string;
   ctaHref?: string;
+  external?: boolean;
 }) {
   return (
     <section className="section-y">
@@ -40,7 +42,7 @@ export function CtaBanner({
             <p className="mx-auto mt-5 max-w-xl text-green-600">{text}</p>
           </Reveal>
           <Reveal delay={180}>
-            <Pill href={ctaHref} variant="orange" size="lg" arrow className="mt-8">
+            <Pill href={ctaHref} variant="orange" size="lg" arrow external={external} className="mt-8">
               {ctaLabel}
             </Pill>
           </Reveal>

@@ -106,6 +106,7 @@ export const CONSEIL_CONSULTATIF = [
 
 export const COMMISSION_SCIENTIFIQUE = {
   titre: "Commission Scientifique Nationale",
+  facebook: "https://www.facebook.com/profile.php?id=100067149413276",
   mission:
     "Notre mission est d'organiser des activités, des événements et des formations destinées à renforcer les compétences scientifiques des membres de l'association.",
   objectif:
@@ -186,8 +187,6 @@ export const FOOTER = {
   commissions: [
     { label: "Commission Scientifique", href: "/commission-scientifique" },
     { label: "Conseil Consultatif", href: "/conseil-consultatif" },
-    { label: "Commission Sociale", href: "https://www.facebook.com/profile.php?id=61563995780769", external: true },
-    { label: "Commission Sportive", href: "https://www.facebook.com/profile.php?id=61558578915123", external: true },
   ],
   liensUtiles: [
     { label: "Ambassade de Guinée au Maroc", href: "https://web.facebook.com/ambaguirabat/", external: true },

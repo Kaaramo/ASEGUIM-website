@@ -16,7 +16,7 @@ export default function ConseilConsultatif() {
       <PageHeader
         tag="Conseil Consultatif"
         title="Le Conseil Consultatif de l'ASEGUIM"
-        subtitle="L'instance qui accompagne et conseille le Bureau Exécutif Central."
+        subtitle="L'instance suprême de l'ASEGUIM : garante des statuts, elle convoque l'Assemblée Générale, organise les élections et veille à la continuité et à l'intégrité de l'association."
       />
       <section className="section-y pt-0">
         <div className="container-careloop grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
