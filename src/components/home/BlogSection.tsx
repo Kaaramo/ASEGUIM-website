@@ -21,7 +21,7 @@ export function BlogSection() {
           </Reveal>
         </div>
         <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {BLOG_POSTS.map((post, i) => (
+          {BLOG_POSTS.slice(0, 3).map((post, i) => (
             <Reveal key={post.slug} delay={i * 90}>
               <BlogCard post={post} />
             </Reveal>

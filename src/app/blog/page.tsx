@@ -15,10 +15,10 @@ export default function BlogPage() {
     <>
       <PageHeader
         tag="Our blog"
-        title="Stories from the Careloop community"
-        subtitle="Real stories from the field — the people, projects and progress behind our work."
+        title="Blogs and insights"
+        subtitle="Real stories from the field, program updates and reflections on the work we do together."
       />
-      <section className="section-y">
+      <section className="section-y pt-0">
         <div className="container-careloop grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {BLOG_POSTS.map((post, i) => (
             <Reveal key={post.slug} delay={(i % 3) * 90}>

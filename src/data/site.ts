@@ -114,6 +114,33 @@ export const BLOG_POSTS: BlogPost[] = [
     category: "Humanitarian",
     readingTime: "6 min read",
   },
+  {
+    slug: "how-consistent-care-rebuilds-trust",
+    title: "How consistent care rebuilds trust in communities",
+    excerpt: "Trust is earned by returning — long after the first delivery of aid.",
+    image: "/images/blog-4.png",
+    date: "May 16, 2026",
+    category: "Community",
+    readingTime: "5 min read",
+  },
+  {
+    slug: "volunteer-stories-that-stayed-with-us",
+    title: "Volunteer stories that stayed with us",
+    excerpt: "The people who give their time are the reason our programs endure.",
+    image: "/images/blog-5.png",
+    date: "May 28, 2026",
+    category: "Volunteers",
+    readingTime: "4 min read",
+  },
+  {
+    slug: "designing-programs-that-last",
+    title: "Designing programs that last beyond the crisis",
+    excerpt: "What it takes to build support that compounds instead of fading away.",
+    image: "/images/blog-6.png",
+    date: "Jun 04, 2026",
+    category: "Programs",
+    readingTime: "7 min read",
+  },
 ];
 
 export const FAQS: FaqItem[] = [
