@@ -5,6 +5,8 @@ import {
   PartyPopper,
   MessageCircle,
   Calendar,
+  ShieldCheck,
+  Sprout,
   type LucideIcon,
 } from "lucide-react";
 
@@ -16,4 +18,6 @@ export const ICONS: Record<string, LucideIcon> = {
   PartyPopper,
   MessageCircle,
   Calendar,
+  ShieldCheck,
+  Sprout,
 };

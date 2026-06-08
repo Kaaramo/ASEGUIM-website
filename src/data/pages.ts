@@ -57,6 +57,25 @@ export const CONTACT_INFO = [
   { label: "Address", value: "120 Riverside Ave, Suite 400" },
 ];
 
+export const ABOUT_COUNTERS = [
+  { value: 1800, suffix: "+", label: "Children enrolled in educational programs" },
+  { value: 1200, suffix: "+", label: "Parents engaged in community workshops" },
+  { value: 500, suffix: "+", label: "Volunteers supporting local initiatives" },
+];
+
+export const CORE_VALUES = [
+  { icon: "HandHeart", color: "bg-orange", title: "Compassion First", text: "We lead with empathy in everything we do. Every person we serve is treated with dignity." },
+  { icon: "ShieldCheck", color: "bg-green-700", title: "Integrity & Transparency", text: "We are committed to honesty, accountability and stewardship of every contribution." },
+  { icon: "Users", color: "bg-olive", title: "Community-Led Action", text: "We believe the people closest to the challenges are closest to the solutions." },
+  { icon: "Sprout", color: "bg-orange", title: "Sustainable Impact", text: "We focus on long-term change, not short-term fixes that fade away." },
+];
+
+export const TEAM = [
+  { name: "Elias Thorne", role: "Volunteer Coordinator", image: "/images/team-1.png" },
+  { name: "Fatima Hassan", role: "Partnerships Manager", image: "/images/team-2.png" },
+  { name: "Kenji Tanaka", role: "Treasurer", image: "/images/team-3.png" },
+];
+
 export function getCauseBySlug(slug: string): Cause | undefined {
   return ALL_CAUSES.find((c) => c.slug === slug);
 }
