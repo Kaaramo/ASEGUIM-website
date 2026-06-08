@@ -21,7 +21,7 @@ export function Hero() {
         <div className="container-careloop relative flex min-h-[80vh] flex-col justify-end pb-16 pt-32">
           <Reveal>
             <span className="inline-block rounded-full bg-cream/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-cream">
-              {SITE.slogan}
+              {SITE.devise}
             </span>
           </Reveal>
           <Reveal delay={100}>

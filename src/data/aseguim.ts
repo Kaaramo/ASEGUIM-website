@@ -5,6 +5,7 @@ export const SITE = {
   nom: "ASEGUIM",
   nomComplet: "Association des Stagiaires et Étudiants Guinéens au Maroc",
   slogan: "La plateforme de référence",
+  devise: "ASEGUIMIENS un jour, ASEGUIMIENS pour toujours",
   accroche: "Façonnons l'Avenir Ensemble",
   sousTitre:
     "L'ASEGUIM est le pont d'excellence entre la réussite académique et l'épanouissement culturel des étudiants guinéens au Maroc.",
@@ -15,6 +16,7 @@ export const SITE = {
 export const NAV = [
   { label: "Accueil", href: "/" },
   { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
+  { label: "Bureau exécutif", href: "/bureau-executif" },
   { label: "Nos domaines", href: "/nos-domaines" },
 ];
 

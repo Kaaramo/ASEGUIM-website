@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { SectionHeading } from "@/components/shared/SectionHeading";
-import { TeamCard } from "@/components/shared/TeamCard";
 import { CtaBanner } from "@/components/shared/CtaBanner";
+import { Pill } from "@/components/Pill";
 import { Reveal } from "@/components/Reveal";
-import { HISTOIRE, VISION, BUREAU } from "@/data/aseguim";
+import { HISTOIRE, VISION } from "@/data/aseguim";
 
 export const metadata: Metadata = {
   title: "Qui sommes-nous — ASEGUIM",
-  description: "L'histoire, la vision et le Bureau Exécutif Central de l'ASEGUIM.",
+  description: "L'histoire et la vision de l'ASEGUIM, depuis 1981.",
 };
 
 export default function QuiSommesNous() {
@@ -35,24 +34,15 @@ export default function QuiSommesNous() {
             </div>
           </Reveal>
         </div>
-      </section>
 
-      <section className="section-y pt-0">
-        <div className="container-careloop">
-          <SectionHeading
-            align="center"
-            tag="Bureau Exécutif Central"
-            title="Le Bureau Exécutif Central de l'ASEGUIM"
-            text="L'équipe qui pilote l'association au service de la communauté estudiantine."
-          />
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {BUREAU.map((m, i) => (
-              <Reveal key={m.nom} delay={(i % 3) * 80}>
-                <TeamCard name={m.nom} role={m.role} image={m.image} />
-              </Reveal>
-            ))}
-          </div>
-        </div>
+        <Reveal className="container-careloop mt-10 flex flex-wrap items-center justify-between gap-4 rounded-[2rem] bg-green-200 px-8 py-8">
+          <p className="font-display text-2xl text-ink sm:text-3xl">
+            Découvrez l'équipe qui pilote l'association
+          </p>
+          <Pill href="/bureau-executif" variant="dark" size="md" arrow>
+            Le Bureau Exécutif
+          </Pill>
+        </Reveal>
       </section>
 
       <CtaBanner

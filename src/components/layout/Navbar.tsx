@@ -2,23 +2,36 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { Menu, X, MapPin, Mail, Phone } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Pill } from "@/components/Pill";
-import { NAV } from "@/data/aseguim";
+import { NAV, CONTACT } from "@/data/aseguim";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="relative z-40">
-      {/* Bandeau d'annonce — reste en haut pendant le défilement */}
+      {/* Bandeau de coordonnées — reste en haut pendant le défilement */}
       <div className="fixed inset-x-0 top-0 z-50 bg-ink text-cream">
-        <div className="container-careloop flex h-10 items-center justify-center gap-2 text-center text-[0.8rem] font-medium">
-          <span className="truncate">La plateforme de référence des étudiants guinéens au Maroc</span>
-          <Link href="/adhesion" className="shrink-0 underline underline-offset-2 hover:text-yellow">
-            Adhérer
+        <div className="container-careloop flex h-10 items-center justify-center gap-4 text-[0.78rem] font-medium sm:gap-7">
+          <Link
+            href={CONTACT.mapLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden items-center gap-1.5 hover:text-yellow sm:flex"
+          >
+            <MapPin className="size-3.5 shrink-0" />
+            <span>{CONTACT.adresse}</span>
           </Link>
+          <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-1.5 hover:text-yellow">
+            <Mail className="size-3.5 shrink-0" />
+            <span className="truncate">{CONTACT.email}</span>
+          </a>
+          <a href={CONTACT.telLink} className="flex items-center gap-1.5 hover:text-yellow">
+            <Phone className="size-3.5 shrink-0" />
+            <span>{CONTACT.telephone}</span>
+          </a>
         </div>
       </div>
 
