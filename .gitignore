@@ -47,3 +47,8 @@ next-env.d.ts
 
 # Local temp files
 temp/
+
+# local dev artifacts
+dev-server.log
+dev-server.err.log
+.playwright-mcp/
