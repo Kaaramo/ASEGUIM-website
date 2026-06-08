@@ -1,6 +1,6 @@
 import { Reveal } from "@/components/Reveal";
 
-/** Inner-page hero header: eyebrow tag + large Bayon title + optional subtitle. */
+/** Inner-page hero header (light/cream): eyebrow tag + large Bayon title + optional subtitle. */
 export function PageHeader({
   tag,
   title,
@@ -11,27 +11,25 @@ export function PageHeader({
   subtitle?: string;
 }) {
   return (
-    <section className="px-3 pt-3">
-      <div className="overflow-hidden rounded-[2rem] bg-ink">
-        <div className="container-careloop py-20 text-center sm:py-28">
-          {tag && (
-            <Reveal>
-              <span className="inline-block rounded-full bg-cream/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-cream">
-                {tag}
-              </span>
-            </Reveal>
-          )}
-          <Reveal delay={80}>
-            <h1 className="mx-auto mt-5 max-w-4xl font-display text-cream text-[clamp(2.75rem,7vw,6rem)] leading-[0.96]">
-              {title}
-            </h1>
+    <section className="section-y pt-12 text-center">
+      <div className="container-careloop">
+        {tag && (
+          <Reveal>
+            <span className="inline-block rounded-full bg-ink/5 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-green-700">
+              {tag}
+            </span>
           </Reveal>
-          {subtitle && (
-            <Reveal delay={150}>
-              <p className="mx-auto mt-6 max-w-2xl text-lg text-cream/80">{subtitle}</p>
-            </Reveal>
-          )}
-        </div>
+        )}
+        <Reveal delay={80}>
+          <h1 className="mx-auto mt-5 max-w-4xl font-display text-[clamp(3rem,8vw,7rem)] leading-[0.94] text-ink">
+            {title}
+          </h1>
+        </Reveal>
+        {subtitle && (
+          <Reveal delay={150}>
+            <p className="mx-auto mt-5 max-w-xl text-green-600">{subtitle}</p>
+          </Reveal>
+        )}
       </div>
     </section>
   );

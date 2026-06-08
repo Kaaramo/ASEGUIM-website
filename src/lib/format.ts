@@ -7,6 +7,16 @@ export function formatCurrency(value: number): string {
   }).format(value);
 }
 
+/** Compact currency, e.g. 10000 -> "$10K", 1280000 -> "$1.28M". */
+export function formatCompact(value: number): string {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    notation: "compact",
+    maximumFractionDigits: value >= 1_000_000 ? 2 : 0,
+  }).format(value);
+}
+
 /** Returns the raised/goal ratio as a clamped percentage (0–100). */
 export function progressPercent(raised: number, goal: number): number {
   if (goal <= 0) return 0;

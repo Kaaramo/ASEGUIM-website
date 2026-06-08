@@ -1,32 +1,54 @@
 import type { Cause } from "@/types";
-import { FEATURED_CAUSES } from "@/data/site";
 
-/** Full causes catalogue (featured causes + a few more), reused on /causes. */
+/** Full causes catalogue shown on /causes (uses the real cause imagery). */
 export const ALL_CAUSES: Cause[] = [
-  ...FEATURED_CAUSES,
   {
-    slug: "clean-water-access-for-rural-villages",
-    title: "Clean water access for rural villages",
-    image: "/images/program-1.png",
-    raised: 92_400,
-    goal: 150_000,
-    excerpt: "Wells and filtration that give whole villages a reliable, safe water supply.",
+    slug: "strengthening-youth-development-through-fitness",
+    title: "Strengthening youth development through fitness-focused programs",
+    image: "/images/cause-1.png",
+    raised: 10_000,
+    goal: 50_000,
+    excerpt: "Structured programs that build confidence, discipline and health in young people.",
   },
   {
-    slug: "school-meals-that-keep-children-learning",
-    title: "School meals that keep children learning",
-    image: "/images/program-3.png",
-    raised: 71_800,
-    goal: 120_000,
-    excerpt: "Daily nutritious meals so students can focus on their education, not hunger.",
+    slug: "promoting-healthy-habits-in-youth-with-dynamic-fitness-programs",
+    title: "Promoting healthy habits in youth with dynamic fitness programs",
+    image: "/images/cause-2.png",
+    raised: 12_000,
+    goal: 50_000,
+    excerpt: "Daily activity and nutrition guidance that helps youth thrive long term.",
   },
   {
-    slug: "rebuilding-homes-after-natural-disasters",
-    title: "Rebuilding homes after natural disasters",
-    image: "/images/program-4.png",
-    raised: 138_500,
-    goal: 220_000,
-    excerpt: "Shelter, supplies and long-term support for families recovering from crisis.",
+    slug: "fostering-physical-health-in-young-people-through-organized-programs",
+    title: "Fostering physical health in young people through organized programs",
+    image: "/images/cause-3.png",
+    raised: 10_000,
+    goal: 50_000,
+    excerpt: "Community-led sports and wellness sessions for under-served neighborhoods.",
+  },
+  {
+    slug: "building-stronger-youth-communities-through-fitness",
+    title: "Building stronger youth communities through fitness",
+    image: "/images/cause-4.png",
+    raised: 12_000,
+    goal: 50_000,
+    excerpt: "Several local fitness facilities bringing neighborhoods together around health.",
+  },
+  {
+    slug: "inspiring-active-and-healthy-living-among-youth",
+    title: "Inspiring active and healthy living among youth",
+    image: "/images/cause-5.png",
+    raised: 15_000,
+    goal: 60_000,
+    excerpt: "Youth fitness activities that build lasting, healthy routines from an early age.",
+  },
+  {
+    slug: "empowering-young-individuals-through-fitness",
+    title: "Empowering young individuals through fitness",
+    image: "/images/cause-6.png",
+    raised: 15_000,
+    goal: 58_000,
+    excerpt: "Community wellness spaces and coaching that put young people first.",
   },
 ];
 
