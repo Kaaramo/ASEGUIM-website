@@ -1,33 +1,51 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Bayon, Manrope } from "next/font/google";
 import "./globals.css";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const bayon = Bayon({
+  weight: "400",
   subsets: ["latin"],
+  variable: "--font-bayon",
+  display: "swap",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const manrope = Manrope({
   subsets: ["latin"],
+  variable: "--font-manrope",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Website Clone",
-  description: "Pixel-perfect website clone",
+  metadataBase: new URL("https://careloop.example.com"),
+  title: "Careloop — Non Profit Organization",
+  description:
+    "Careloop is a non-profit organization dedicated to creating lasting change through food security, healthcare access, education and disaster relief.",
+  icons: { icon: "/seo/favicon-1.png" },
+  openGraph: {
+    title: "Careloop — Non Profit Organization",
+    description: "Building brighter, safer futures through consistent community care.",
+    images: ["/seo/og.png"],
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${bayon.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full">
+        <SmoothScroll />
+        <Navbar />
+        {/* Offset for fixed announcement bar (40px) + nav (~72px) */}
+        <main className="pt-[7.5rem]">{children}</main>
+        <Footer />
+      </body>
     </html>
   );
 }
