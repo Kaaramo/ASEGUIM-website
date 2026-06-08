@@ -7,6 +7,9 @@ import {
   Calendar,
   ShieldCheck,
   Sprout,
+  FileText,
+  Search,
+  Compass,
   type LucideIcon,
 } from "lucide-react";
 
@@ -20,4 +23,7 @@ export const ICONS: Record<string, LucideIcon> = {
   Calendar,
   ShieldCheck,
   Sprout,
+  FileText,
+  Search,
+  Compass,
 };

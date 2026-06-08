@@ -79,7 +79,7 @@ export function DonationForm() {
 }
 
 function Label({ children }: { children: React.ReactNode }) {
-  return <span className="text-xs font-bold uppercase tracking-wide text-ink/60">{children}</span>;
+  return <span className="block text-xs font-bold uppercase tracking-wide text-ink/60">{children}</span>;
 }
 
 function Field({

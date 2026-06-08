@@ -98,6 +98,18 @@ export const TEAM = [
   { name: "Kenji Tanaka", role: "Treasurer", image: "/images/team-3.png" },
 ];
 
+export const VOLUNTEER_STEPS = [
+  { icon: "FileText", color: "bg-green-600", title: "Apply to volunteer", text: "Start by completing the volunteer application form with your basic information, interests and availability." },
+  { icon: "Search", color: "bg-green-700", title: "Application review", text: "Our team carefully reviews each application to ensure a good fit for both you and the program." },
+  { icon: "Compass", color: "bg-orange", title: "Orientation & onboarding", text: "Once selected, you'll receive an orientation that introduces our mission, values and guidelines." },
+];
+
+export const VOLUNTEER_TEAM = [
+  { name: "Evelyn Hayes", role: "Meal Delivery Volunteer", image: "/images/vol-1.png" },
+  { name: "Ricardo Silva", role: "Gardening Volunteer", image: "/images/vol-2.png" },
+  { name: "Mei Chen", role: "Pet Therapy Volunteer", image: "/images/vol-3.png" },
+];
+
 export function getCauseBySlug(slug: string): Cause | undefined {
   return ALL_CAUSES.find((c) => c.slug === slug);
 }
