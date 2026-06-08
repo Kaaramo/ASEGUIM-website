@@ -9,8 +9,8 @@ export const SITE = {
   accroche: "Façonnons l'Avenir Ensemble",
   sousTitre:
     "L'ASEGUIM est le pont d'excellence entre la réussite académique et l'épanouissement culturel des étudiants guinéens au Maroc.",
-  logo: "/aseguim/logo.jpeg",
-  banniereVideo: "/aseguim/banniere.mp4",
+  logo: "/aseguim/images/logo.jpeg",
+  banniereVideo: "/aseguim/videos/banniere.mp4",
 };
 
 export const NAV = [
@@ -40,28 +40,28 @@ export const DOMAINES = [
   {
     slug: "scientifique",
     nom: "Scientifique",
-    image: "/aseguim/domains/scientifique.jpg",
+    image: "/aseguim/images/domains/scientifique.jpg",
     description:
       "Nous organisons des événements académiques et scientifiques stimulants et offrons un soutien continu pour promouvoir l'excellence et catalyser la réussite scolaire de nos membres.",
   },
   {
     slug: "social",
     nom: "Social",
-    image: "/aseguim/domains/social.jpeg",
+    image: "/aseguim/images/domains/social.jpeg",
     description:
       "Notre engagement social se manifeste à travers l'accueil chaleureux et l'intégration des nouveaux étudiants, le renforcement des liens au sein de notre communauté.",
   },
   {
     slug: "culturel",
     nom: "Culturel",
-    image: "/aseguim/domains/culturel.jpg",
+    image: "/aseguim/images/domains/culturel.jpg",
     description:
       "Nous célébrons et promouvons la richesse de la culture guinéenne à travers une variété d'événements et d'activités tout au long de l'année.",
   },
   {
     slug: "sportif",
     nom: "Sportif",
-    image: "/aseguim/domains/sportif.jpg",
+    image: "/aseguim/images/domains/sportif.jpg",
     description:
       "Le sport occupe une place centrale dans nos activités. Nous organisons régulièrement des tournois sportifs variés et des activités physiques pour promouvoir le bien-être.",
   },
@@ -75,15 +75,15 @@ export const CHIFFRES = [
 ];
 
 export const PARTENAIRES = [
-  { nom: "AMCI", logo: "/aseguim/partners/amci.jpg" },
-  { nom: "Alsaba Group", logo: "/aseguim/partners/alsaba.jpg" },
-  { nom: "Office National du Tourisme", logo: "/aseguim/partners/ont.jpg" },
-  { nom: "Université Mohammed VI Polytechnique", logo: "/aseguim/partners/um6p.jpg" },
-  { nom: "Ahlam Rêves", logo: "/aseguim/partners/ahlam-reves.jpg" },
-  { nom: "CESAM", logo: "/aseguim/partners/cesam.jpg" },
-  { nom: "Ambassade de Guinée au Maroc", logo: "/aseguim/partners/ambassade-guinee.jpg" },
-  { nom: "Conseil des Guinéens au Maroc", logo: "/aseguim/partners/conseil-guineens.jpg" },
-  { nom: "SUP MTI", logo: "/aseguim/partners/sup-mti.jpg", recent: true },
+  { nom: "AMCI", logo: "/aseguim/images/partners/amci.jpg" },
+  { nom: "Alsaba Group", logo: "/aseguim/images/partners/alsaba.jpg" },
+  { nom: "Office National du Tourisme", logo: "/aseguim/images/partners/ont.jpg" },
+  { nom: "Université Mohammed VI Polytechnique", logo: "/aseguim/images/partners/um6p.jpg" },
+  { nom: "Ahlam Rêves", logo: "/aseguim/images/partners/ahlam-reves.jpg" },
+  { nom: "CESAM", logo: "/aseguim/images/partners/cesam.jpg" },
+  { nom: "Ambassade de Guinée au Maroc", logo: "/aseguim/images/partners/ambassade-guinee.jpg" },
+  { nom: "Conseil des Guinéens au Maroc", logo: "/aseguim/images/partners/conseil-guineens.jpg" },
+  { nom: "SUP MTI", logo: "/aseguim/images/partners/sup-mti.jpg", recent: true },
 ];
 
 const CL = "https://res.cloudinary.com/dlikl4ilr/image/upload";

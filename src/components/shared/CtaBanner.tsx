@@ -1,5 +1,5 @@
-import { Pill } from "@/components/Pill";
-import { Reveal } from "@/components/Reveal";
+import { Pill } from "@/components/ui/Pill";
+import { Reveal } from "@/components/ui/Reveal";
 
 /** Decorative 8-petal "spark" flower used as a Framer-style accent. */
 function Flower({ className }: { className?: string }) {

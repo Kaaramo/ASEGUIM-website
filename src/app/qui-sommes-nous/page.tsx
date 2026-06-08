@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { CtaBanner } from "@/components/shared/CtaBanner";
-import { Pill } from "@/components/Pill";
-import { Reveal } from "@/components/Reveal";
+import { Pill } from "@/components/ui/Pill";
+import { Reveal } from "@/components/ui/Reveal";
 import { HISTOIRE, VISION } from "@/data/aseguim";
 
 export const metadata: Metadata = {

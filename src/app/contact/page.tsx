@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { MessageForm } from "@/components/aseguim/MessageForm";
-import { Reveal } from "@/components/Reveal";
+import { MessageForm } from "@/components/forms/MessageForm";
+import { Reveal } from "@/components/ui/Reveal";
 import { CONTACT, RESEAUX } from "@/data/aseguim";
 
 export const metadata: Metadata = {

@@ -3,8 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Menu, X, MapPin, Mail, Phone } from "lucide-react";
-import { Logo } from "@/components/Logo";
-import { Pill } from "@/components/Pill";
+import { Logo } from "@/components/ui/Logo";
+import { Pill } from "@/components/ui/Pill";
 import { NAV, CONTACT } from "@/data/aseguim";
 
 export function Navbar() {

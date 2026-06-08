@@ -1,9 +1,9 @@
-import { Hero } from "@/components/aseguim/Hero";
-import { MissionSection } from "@/components/aseguim/MissionSection";
-import { DomainesSection } from "@/components/aseguim/DomainesSection";
-import { ChiffresSection } from "@/components/aseguim/ChiffresSection";
-import { ImplicationSection } from "@/components/aseguim/ImplicationSection";
-import { PartenairesSection } from "@/components/aseguim/PartenairesSection";
+import { Hero } from "@/components/sections/Hero";
+import { MissionSection } from "@/components/sections/MissionSection";
+import { DomainesSection } from "@/components/sections/DomainesSection";
+import { ChiffresSection } from "@/components/sections/ChiffresSection";
+import { ImplicationSection } from "@/components/sections/ImplicationSection";
+import { PartenairesSection } from "@/components/sections/PartenairesSection";
 import { CtaBanner } from "@/components/shared/CtaBanner";
 
 export default function Home() {

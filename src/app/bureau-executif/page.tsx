@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { TeamCard } from "@/components/shared/TeamCard";
 import { CtaBanner } from "@/components/shared/CtaBanner";
-import { Reveal } from "@/components/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 import { BUREAU } from "@/data/aseguim";
 
 export const metadata: Metadata = {

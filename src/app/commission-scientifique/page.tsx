@@ -3,7 +3,7 @@ import { Video, Mic, CalendarDays } from "lucide-react";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 import { CtaBanner } from "@/components/shared/CtaBanner";
-import { Reveal } from "@/components/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 import { COMMISSION_SCIENTIFIQUE as CS } from "@/data/aseguim";
 
 export const metadata: Metadata = {

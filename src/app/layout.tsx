@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Bayon, Manrope } from "next/font/google";
 import "./globals.css";
-import { SmoothScroll } from "@/components/SmoothScroll";
+import { SmoothScroll } from "@/components/ui/SmoothScroll";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   title: "ASEGUIM — Association des Stagiaires et Étudiants Guinéens au Maroc",
   description:
     "L'ASEGUIM est le pont d'excellence entre la réussite académique et l'épanouissement culturel des étudiants guinéens au Maroc. Depuis 1981.",
-  icons: { icon: "/aseguim/logo.jpeg" },
+  icons: { icon: "/aseguim/images/logo.jpeg" },
   openGraph: {
     title: "ASEGUIM — Façonnons l'Avenir Ensemble",
     description: "La plateforme de référence des étudiants guinéens au Maroc.",
-    images: ["/aseguim/logo.jpeg"],
+    images: ["/aseguim/images/logo.jpeg"],
   },
 };
 

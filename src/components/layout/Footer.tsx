@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { MapPin, Mail, Phone } from "lucide-react";
-import { Pill } from "@/components/Pill";
+import { Pill } from "@/components/ui/Pill";
 import { FOOTER, CONTACT, RESEAUX, BUREAUX_REGIONAUX, SITE } from "@/data/aseguim";
 
 type FLink = { label: string; href: string; external?: boolean };

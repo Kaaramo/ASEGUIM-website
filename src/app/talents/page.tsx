@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { TalentsGrid } from "@/components/aseguim/TalentsGrid";
+import { TalentsGrid } from "@/components/sections/TalentsGrid";
 import { CtaBanner } from "@/components/shared/CtaBanner";
 
 export const metadata: Metadata = {

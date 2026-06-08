@@ -1,4 +1,4 @@
-import { Reveal } from "@/components/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 
 /** Inner-page hero header (light/cream): eyebrow tag + large Bayon title + optional subtitle. */
 export function PageHeader({

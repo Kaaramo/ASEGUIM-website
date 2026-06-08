@@ -2,7 +2,7 @@ import Image from "next/image";
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/shared/PageHeader";
 import { CtaBanner } from "@/components/shared/CtaBanner";
-import { Reveal } from "@/components/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 import { DOMAINES } from "@/data/aseguim";
 

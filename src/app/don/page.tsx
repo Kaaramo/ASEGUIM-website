@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Target, Home, Utensils, Users } from "lucide-react";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { DonForm } from "@/components/aseguim/DonForm";
-import { Reveal } from "@/components/Reveal";
+import { DonForm } from "@/components/forms/DonForm";
+import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
   title: "Faire un don — ASEGUIM",

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Heart } from "lucide-react";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { PartenaireForm } from "@/components/aseguim/PartenaireForm";
-import { Reveal } from "@/components/Reveal";
+import { PartenaireForm } from "@/components/forms/PartenaireForm";
+import { Reveal } from "@/components/ui/Reveal";
 import { PARTENAIRES } from "@/data/aseguim";
 
 export const metadata: Metadata = {

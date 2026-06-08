@@ -1,27 +1,17 @@
 {
-  "name": "ai-website-clone-template",
-  "version": "0.3.1",
+  "name": "aseguim-website",
+  "version": "1.0.0",
   "private": true,
-  "description": "Clone any website into a clean, modern Next.js codebase using AI coding agents",
-  "author": "JCodesMore",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/JCodesMore/ai-website-cloner-template.git"
-  },
-  "homepage": "https://github.com/JCodesMore/ai-website-cloner-template",
-  "bugs": {
-    "url": "https://github.com/JCodesMore/ai-website-cloner-template/issues"
-  },
+  "description": "Site officiel de l'ASEGUIM — Association des Stagiaires et Étudiants Guinéens au Maroc.",
+  "author": "ASEGUIM",
+  "license": "UNLICENSED",
   "keywords": [
-    "claude-code",
-    "website-clone",
-    "reverse-engineering",
+    "aseguim",
+    "association",
+    "guinee",
+    "maroc",
     "nextjs",
-    "ai",
-    "template",
-    "tailwindcss",
-    "shadcn-ui"
+    "tailwindcss"
   ],
   "engines": {
     "node": ">=24"

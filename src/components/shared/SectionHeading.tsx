@@ -1,4 +1,4 @@
-import { Reveal } from "@/components/Reveal";
+import { Reveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
 
 /** Eyebrow tag + large Bayon heading, with optional supporting text. */

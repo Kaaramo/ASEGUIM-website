@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/shared/PageHeader";
-import { AdhesionForm } from "@/components/aseguim/AdhesionForm";
-import { Reveal } from "@/components/Reveal";
+import { AdhesionForm } from "@/components/forms/AdhesionForm";
+import { Reveal } from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
   title: "Adhésion — ASEGUIM",
