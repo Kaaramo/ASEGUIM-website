@@ -112,12 +112,6 @@ La page `/bureau-executif` affiche le bureau sous forme d'organigramme : le Secr
 
 </details>
 
-## Notes
-
-- Les photos du conseil consultatif et de quelques anciens membres restent servies depuis Cloudinary (`res.cloudinary.com`, autorisé dans `next.config.ts`) ; celles du bureau exécutif actuel sont locales (voir ci-dessus).
-- Les formulaires (adhésion, don, partenariat) écrivent en base Neon via les routes API ; le formulaire de contact reste à brancher.
-- La page `/talents` existe mais n'est pas liée dans la navigation (masquée).
-
 <div align="center">
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=2b614a&height=120&section=footer" width="100%" alt="footer" />
