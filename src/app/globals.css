@@ -166,3 +166,31 @@ html.lenis, html.lenis body { height: auto; }
 .lenis.lenis-smooth { scroll-behavior: auto !important; }
 .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
 .lenis.lenis-stopped { overflow: hidden; }
+
+/* Bureau exécutif: animated org-chart connectors */
+@keyframes org-dash {
+  to { stroke-dashoffset: -28; }
+}
+@keyframes org-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.65; }
+  50% { transform: scale(1.6); opacity: 1; }
+}
+.org-path {
+  stroke: var(--green-700);
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 1 9;
+  opacity: 0.55;
+  animation: org-dash 1.4s linear infinite;
+}
+.org-node {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--green-700);
+  box-shadow: 0 0 0 5px rgba(43, 97, 74, 0.18);
+  animation: org-pulse 2s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .org-path, .org-node { animation: none; }
+}

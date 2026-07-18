@@ -16,7 +16,14 @@ export const SITE = {
 export const NAV = [
   { label: "Accueil", href: "/" },
   { label: "Qui sommes-nous", href: "/qui-sommes-nous" },
-  { label: "Bureau exécutif", href: "/bureau-executif" },
+  {
+    label: "Équipe",
+    href: "/bureau-executif",
+    children: [
+      { label: "Bureau exécutif", href: "/bureau-executif" },
+      { label: "Conseil consultatif", href: "/conseil-consultatif" },
+    ],
+  },
   { label: "Nos domaines", href: "/nos-domaines" },
 ];
 
@@ -24,7 +31,7 @@ export const HISTOIRE = {
   titre: "Notre Histoire",
   paragraphes: [
     "Depuis 1981, l'ASEGUIM symbolise l'excellence et la cohésion de la communauté estudiantine guinéenne au Maroc. Première association guinéenne officiellement reconnue par les autorités marocaines, elle est devenue un pilier essentiel pour plus de 1100 étudiants.",
-    "ASEGUIM, organisation amicale, démocratique, apolitique et indépendante, rassemble ses membres autour d'un idéal commun visant à promouvoir l'excellence académique et favoriser l'épanouissement estudiantin. Elle façonne l'avenir étudiant.",
+    "ASEGUIM, organisation amicale, démocratique, apolitique et indépendante, rassemble ses membres autour d'un idéal commun visant à promouvoir l'excellence académique et favoriser l'épanouissement estudiantin.",
   ],
 };
 
@@ -54,7 +61,7 @@ export const DOMAINES = [
   {
     slug: "culturel",
     nom: "Culturel",
-    image: "/aseguim/images/domains/culturel.jpg",
+    image: "/aseguim/images/domains/culturelle.jpeg",
     description:
       "Nous célébrons et promouvons la richesse de la culture guinéenne à travers une variété d'événements et d'activités tout au long de l'année.",
   },
@@ -70,11 +77,12 @@ export const DOMAINES = [
 export const CHIFFRES = [
   { valeur: 1100, suffixe: "+", titre: "Étudiants membres", detail: "Siège social : Rabat" },
   { valeur: 830, suffixe: "", titre: "Étudiants boursiers", detail: "Boursiers cette année : 170" },
-  { valeur: 43, suffixe: "", titre: "Années d'existence", detail: "Création : 1981" },
-  { valeur: 15, suffixe: "", titre: "Bureaux régionaux", detail: "Ville scientifique : Tétouan" },
+  { valeur: 45, suffixe: "", titre: "Années d'existence", detail: "Création : 1981" },
+  { valeur: 15, suffixe: "", titre: "Bureaux régionaux", detail: "" },
 ];
 
 export const PARTENAIRES = [
+  { nom: "SNABE", logo: "/aseguim/images/partners/Snabe.jpeg" },
   { nom: "AMCI", logo: "/aseguim/images/partners/amci.jpg" },
   { nom: "Alsaba Group", logo: "/aseguim/images/partners/alsaba.jpg" },
   { nom: "Office National du Tourisme", logo: "/aseguim/images/partners/ont.jpg" },
@@ -89,15 +97,18 @@ export const PARTENAIRES = [
 const CL = "https://res.cloudinary.com/dlikl4ilr/image/upload";
 
 export const BUREAU = [
-  { nom: "Mohamed Sylla", role: "Secrétaire Général", image: `${CL}/v1750776323/SG_woyrbz.jpg` },
-  { nom: "Alpha Mamadou Fofana", role: "Secrétaire Général Adjoint", image: `${CL}/v1750776473/Fofana_rr1tvp.jpg` },
-  { nom: "Fatoumata Sidibé", role: "Chargée aux Affaires Scientifiques", image: `${CL}/v1750776981/Fatoumata_SIDIBE_smdacj.jpg` },
-  { nom: "Mohamed Kébé", role: "Trésorier", image: `${CL}/v1750776666/K%C3%A9b%C3%A9_eegnsl.jpg` },
-  { nom: "Fatoumata Bah", role: "Chargée à la Communication", image: `${CL}/v1750776564/Faty_w7sbey.jpg` },
-  { nom: "Amadou Benthe Diallo", role: "Chargé aux Affaires Sportives", image: `${CL}/v1750776637/Benthe_rfallv.jpg` },
-  { nom: "Issiaga Bangoura", role: "Chargé aux Affaires Sociales et Administratives", image: `${CL}/v1750776597/Issiaga_ecdgwg.jpg` },
-  { nom: "Alhassane Kallé", role: "Chargé aux Affaires Culturelles", image: `${CL}/v1750796349/Kall%C3%A9_puutob.jpg` },
-  { nom: "Yacouba Condé", role: "Commissaire au Compte", image: `${CL}/v1750777120/WhatsApp_Image_2025-06-22_%C3%A0_12.05.10_57c1fe22_vxyib3.jpg` },
+  {
+    nom: "SYLLA Mohamed",
+    role: "Secrétaire général",
+    image: "/aseguim/images/bureau-2026/sylla-mohamed.jpeg",
+    featured: true,
+  },
+  { nom: "MARA Makagbè", role: "Chargée de communication", image: "/aseguim/images/bureau-2026/mara-makagbe.jpeg" },
+  { nom: "KEÏTA Ibrahima", role: "Secrétaire général Adjoint", image: "/aseguim/images/bureau-2026/keita-ibrahima.jpeg" },
+  { nom: "LOUA André", role: "Chargé Scientifique", image: "/aseguim/images/bureau-2026/loua-andre.jpeg" },
+  { nom: "OULARÉ Ibrahima Tenen", role: "Chargé culturel", image: "/aseguim/images/bureau-2026/oulare-ibrahima-tenen.jpeg" },
+  { nom: "DIARÉ Mohamed", role: "Chargé sportif", image: "/aseguim/images/bureau-2026/diare-mohamed.jpeg" },
+  { nom: "CONDÉ Issa Mohamed", role: "Chargé social et administratif", image: "/aseguim/images/bureau-2026/conde-issa-mohamed.jpeg" },
 ];
 
 export const CONSEIL_CONSULTATIF = [
@@ -167,7 +178,6 @@ export const IMPLICATION = [
   { icon: "UserPlus", titre: "Adhérer à l'ASEGUIM", texte: "Devenez membre officiel et rejoignez le plus grand réseau étudiant guinéen au Maroc.", href: "/adhesion" },
   { icon: "HandHeart", titre: "Faire un don", texte: "Soutenez les activités, le logement et l'alimentation de nos étudiants.", href: "/don" },
   { icon: "Handshake", titre: "Devenir partenaire", texte: "Associez votre organisation à notre mission d'excellence et d'épanouissement.", href: "/devenir-partenaire" },
-  { icon: "Users", titre: "Rejoindre une commission", texte: "Mettez vos compétences au service de la communauté au sein de nos commissions.", href: "/commission-scientifique" },
 ];
 
 export const CONTACT = {

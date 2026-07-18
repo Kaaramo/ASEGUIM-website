@@ -28,7 +28,7 @@ export function PartenairesSection() {
                   alt={p.nom}
                   width={160}
                   height={120}
-                  className="max-h-full w-auto object-contain grayscale transition-all duration-300 group-hover:grayscale-0"
+                  className="max-h-full w-auto object-contain"
                 />
               </div>
             </Reveal>

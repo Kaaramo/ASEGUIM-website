@@ -51,3 +51,28 @@ export function Pill({ href, children, variant, size, className, arrow, external
     </Link>
   );
 }
+
+type SubmitPillProps = VariantProps<typeof pill> & {
+  children: React.ReactNode;
+  className?: string;
+  arrow?: boolean;
+  disabled?: boolean;
+};
+
+/** Same visual style as Pill, but renders a real <button type="submit"> for use inside forms. */
+export function SubmitPill({ children, variant, size, className, arrow, disabled }: SubmitPillProps) {
+  return (
+    <button
+      type="submit"
+      disabled={disabled}
+      className={cn(pill({ variant, size }), arrow && "pr-2", "disabled:cursor-not-allowed disabled:opacity-60", className)}
+    >
+      <span>{children}</span>
+      {arrow && (
+        <span className="grid size-8 place-items-center rounded-full bg-white/15 transition-transform duration-200 group-hover:rotate-45">
+          <ArrowUpRight className="size-4" />
+        </span>
+      )}
+    </button>
+  );
+}

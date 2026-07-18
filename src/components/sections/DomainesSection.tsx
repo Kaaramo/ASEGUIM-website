@@ -11,7 +11,6 @@ export function DomainesSection() {
           align="center"
           tag="Nos domaines d'intervention"
           title="Découvrez les différents aspects de notre engagement"
-          text="Découvrez les différents aspects de notre engagement envers la communauté estudiantine."
         />
         <div className="mt-14 grid gap-6 sm:auto-rows-fr sm:grid-cols-2">
           {DOMAINES.map((d, i) => (

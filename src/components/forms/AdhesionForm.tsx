@@ -1,34 +1,76 @@
 "use client";
 
 import { useState } from "react";
-import { Pill } from "@/components/ui/Pill";
+import { SubmitPill } from "@/components/ui/Pill";
 
 function Label({ children }: { children: React.ReactNode }) {
   return <span className="block text-xs font-bold uppercase tracking-wide text-ink/60">{children}</span>;
 }
 
-function Field({ label, name, placeholder, type = "text" }: { label: string; name: string; placeholder?: string; type?: string }) {
+function Field({
+  label,
+  name,
+  placeholder,
+  type = "text",
+  required,
+}: {
+  label: string;
+  name: string;
+  placeholder?: string;
+  type?: string;
+  required?: boolean;
+}) {
   return (
     <label className="block">
       <Label>{label}</Label>
-      <input type={type} name={name} placeholder={placeholder} className="input-careloop" />
+      <input type={type} name={name} placeholder={placeholder} required={required} className="input-careloop" />
     </label>
   );
 }
 
-/** Formulaire d'adhésion ASEGUIM (démo — réservé aux étudiants guinéens). */
+/** Formulaire d'adhésion ASEGUIM — enregistre la demande en base de données. */
 export function AdhesionForm() {
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+    const form = new FormData(e.currentTarget);
+    const payload = {
+      prenom: form.get("prenom"),
+      nom: form.get("nom"),
+      email: form.get("email"),
+      passeport: form.get("passeport"),
+      statut: form.get("statut"),
+      ecole: form.get("ecole"),
+      filiere: form.get("filiere"),
+      promotion: form.get("promotion"),
+      ville: form.get("ville"),
+      contactNom: form.get("contactNom"),
+      contactTel: form.get("contactTel"),
+    };
+
+    try {
+      const res = await fetch("/api/adhesion", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (!res.ok) throw new Error("Échec de l'envoi");
+      setStatus("sent");
+      e.currentTarget.reset();
+    } catch {
+      setStatus("error");
+    }
+  }
+
   return (
-    <form
-      onSubmit={(e) => { e.preventDefault(); setSent(true); }}
-      className="rounded-[1.75rem] bg-white p-7 sm:p-9"
-    >
+    <form onSubmit={handleSubmit} className="rounded-[1.75rem] bg-white p-7 sm:p-9">
       <h3 className="font-display text-2xl text-ink">Informations personnelles</h3>
       <div className="mt-5 grid gap-5 sm:grid-cols-2">
-        <Field label="Prénom" name="prenom" placeholder="Ex : Mamadou" />
-        <Field label="Nom" name="nom" placeholder="Ex : DIALLO" />
-        <Field label="Email" name="email" type="email" placeholder="Ex : mamadou.diallo@gmail.com" />
+        <Field label="Prénom" name="prenom" placeholder="Ex : Mamadou" required />
+        <Field label="Nom" name="nom" placeholder="Ex : DIALLO" required />
+        <Field label="Email" name="email" type="email" placeholder="Ex : mamadou.diallo@gmail.com" required />
         <Field label="Numéro de passeport" name="passeport" placeholder="Ex : O00652356" />
       </div>
 
@@ -55,14 +97,19 @@ export function AdhesionForm() {
         <Field label="Numéro du contact" name="contactTel" placeholder="Ex : +224621123456" />
       </div>
 
-      <Pill href="#" variant="orange" size="lg" arrow className="mt-8 w-full">
-        {sent ? "Demande envoyée !" : "Envoyer ma demande"}
-      </Pill>
-      <p className="mt-3 text-center text-xs text-green-600">
-        {sent
-          ? "Merci ! Démo — votre demande n'a pas été réellement transmise."
-          : "En soumettant ce formulaire, vous acceptez d'être contacté par l'ASEGUIM pour finaliser votre adhésion."}
-      </p>
+      <SubmitPill variant="orange" size="lg" arrow disabled={status === "sending"} className="mt-8 w-full">
+        {status === "sending" ? "Envoi en cours…" : status === "sent" ? "Demande envoyée !" : "Envoyer ma demande"}
+      </SubmitPill>
+      {status === "sent" && (
+        <p className="mt-3 text-center text-xs text-green-600">
+          Merci ! Votre demande d'adhésion a bien été enregistrée. Notre équipe vous contactera prochainement.
+        </p>
+      )}
+      {status === "error" && (
+        <p className="mt-3 text-center text-xs text-red-600">
+          Une erreur est survenue lors de l'envoi. Merci de réessayer.
+        </p>
+      )}
     </form>
   );
 }

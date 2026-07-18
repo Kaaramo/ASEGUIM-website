@@ -26,7 +26,7 @@ export default function Don() {
       />
 
       <section className="section-y pt-0">
-        <div className="container-careloop grid items-start gap-12 lg:grid-cols-2">
+        <div className="container-careloop grid grid-cols-1 items-start gap-12 lg:grid-cols-2">
           <div>
             <div className="grid grid-cols-2 gap-4">
               {UTILITES.map((u, i) => (

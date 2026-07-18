@@ -14,7 +14,7 @@ export function Hero() {
           muted
           loop
           playsInline
-          poster={SITE.logo}
+          preload="auto"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/65 to-ink/30" />
 

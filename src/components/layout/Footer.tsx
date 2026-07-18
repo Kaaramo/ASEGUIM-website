@@ -48,9 +48,7 @@ export function Footer() {
             <ul className="mt-6 space-y-3 text-sm">
               <li className="flex items-center gap-2">
                 <MapPin className="size-4 text-yellow" />
-                <Link href={CONTACT.mapLink} target="_blank" rel="noopener noreferrer" className="hover:text-yellow">
-                  {CONTACT.adresse}
-                </Link>
+                <span>{CONTACT.adresse}</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="size-4 text-yellow" />
@@ -58,7 +56,7 @@ export function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="size-4 text-yellow" />
-                <a href={CONTACT.telLink} className="hover:text-yellow">{CONTACT.telephone}</a>
+                <span>{CONTACT.telephone}</span>
               </li>
             </ul>
             <div className="mt-6 flex gap-3">

@@ -21,11 +21,11 @@ export function ImplicationSection() {
           title="Vous aussi, façonnez l'avenir avec nous"
           text="Chacun peut contribuer à la communauté — par l'adhésion, le don, le partenariat ou l'engagement."
         />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {IMPLICATION.map((c, i) => {
             const Icon = ICONS[c.icon] ?? Users;
             return (
-              <Reveal key={c.titre} delay={(i % 4) * 90}>
+              <Reveal key={c.titre} delay={(i % 3) * 90}>
                 <Link
                   href={c.href}
                   className="group flex h-full flex-col rounded-3xl bg-white p-8 transition-transform duration-300 hover:-translate-y-1"
