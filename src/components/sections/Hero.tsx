@@ -1,21 +1,47 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import { Pill } from "@/components/ui/Pill";
 import { Reveal } from "@/components/ui/Reveal";
 import { SITE } from "@/data/aseguim";
 
 export function Hero() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // Certains navigateurs mobiles (économie de données, gestes requis)
+    // ignorent l'autoplay déclaratif : on force la lecture en boucle au montage.
+    const video = videoRef.current;
+    if (!video) return;
+    const tryPlay = () => video.play().catch(() => {});
+    tryPlay();
+    video.addEventListener("loadedmetadata", tryPlay);
+    document.addEventListener("visibilitychange", tryPlay);
+    return () => {
+      video.removeEventListener("loadedmetadata", tryPlay);
+      document.removeEventListener("visibilitychange", tryPlay);
+    };
+  }, []);
+
   return (
     <section className="px-3">
       <div className="relative overflow-hidden rounded-[2rem] bg-ink">
-        {/* Vidéo bannière de l'association */}
+        {/* Vidéo bannière de l'association — source allégée sur mobile pour une lecture fluide en boucle */}
         <video
+          ref={videoRef}
           className="absolute inset-0 size-full object-cover"
-          src={SITE.banniereVideo}
+          poster={SITE.banniereVideoPoster}
           autoPlay
           muted
           loop
           playsInline
           preload="auto"
-        />
+          disablePictureInPicture
+          disableRemotePlayback
+        >
+          <source src={SITE.banniereVideoMobile} media="(max-width: 767px)" type="video/mp4" />
+          <source src={SITE.banniereVideo} type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/65 to-ink/30" />
 
         <div className="container-careloop relative flex min-h-[80vh] flex-col justify-end pb-16 pt-32">

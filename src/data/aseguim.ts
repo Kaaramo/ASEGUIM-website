@@ -11,6 +11,8 @@ export const SITE = {
     "L'ASEGUIM est le pont d'excellence entre la réussite académique et l'épanouissement culturel des étudiants guinéens au Maroc.",
   logo: "/aseguim/images/logo.jpeg",
   banniereVideo: "/aseguim/videos/banniere.mp4",
+  banniereVideoMobile: "/aseguim/videos/banniere-mobile.mp4",
+  banniereVideoPoster: "/aseguim/videos/banniere-poster.jpg",
 };
 
 export const NAV = [

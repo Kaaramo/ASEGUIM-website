@@ -15,24 +15,30 @@ export function Navbar() {
     <header className="relative z-40">
       {/* Bandeau de coordonnées — reste en haut pendant le défilement */}
       <div className="fixed inset-x-0 top-0 z-50 bg-ink text-cream">
-        <div className="container-careloop flex h-10 items-center justify-center gap-4 text-[0.78rem] font-medium sm:gap-7">
+        <div className="container-careloop flex h-9 items-center justify-center gap-3 overflow-hidden text-[0.7rem] font-medium sm:h-10 sm:gap-7 sm:text-[0.78rem]">
           <span className="hidden items-center gap-1.5 sm:flex">
             <MapPin className="size-3.5 shrink-0" />
             <span>{CONTACT.adresse}</span>
           </span>
-          <a href={`mailto:${CONTACT.email}`} className="flex items-center gap-1.5 hover:text-yellow">
+          <a
+            href={`mailto:${CONTACT.email}`}
+            className="flex min-w-0 items-center gap-1.5 hover:text-yellow"
+          >
             <Mail className="size-3.5 shrink-0" />
-            <span className="truncate">{CONTACT.email}</span>
+            <span className="max-w-[38vw] truncate sm:max-w-none">{CONTACT.email}</span>
           </a>
-          <span className="flex items-center gap-1.5">
+          <a
+            href={`tel:${CONTACT.telephone.replace(/[^+\d]/g, "")}`}
+            className="flex shrink-0 items-center gap-1.5 whitespace-nowrap hover:text-yellow"
+          >
             <Phone className="size-3.5 shrink-0" />
             <span>{CONTACT.telephone}</span>
-          </span>
+          </a>
         </div>
       </div>
 
       {/* Navigation — défile avec la page (non fixe) */}
-      <nav className="container-careloop mt-10 flex items-center justify-between py-4">
+      <nav className="container-careloop mt-9 flex items-center justify-between py-4 sm:mt-10">
         <Logo />
 
         <ul className="hidden items-center gap-7 lg:flex">
