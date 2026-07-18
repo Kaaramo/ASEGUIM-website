@@ -9,10 +9,16 @@ export function Hero() {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
-    // Certains navigateurs mobiles (économie de données, gestes requis)
-    // ignorent l'autoplay déclaratif : on force la lecture en boucle au montage.
+    // Le support de <source media="..."> est peu fiable sur mobile : on choisit
+    // la source explicitement en JS, ce qui garantit une lecture fiable.
     const video = videoRef.current;
     if (!video) return;
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+    const desiredSrc = isDesktop ? SITE.banniereVideo : SITE.banniereVideoMobile;
+    if (!video.currentSrc || !video.currentSrc.endsWith(desiredSrc)) {
+      video.src = desiredSrc;
+      video.load();
+    }
     const tryPlay = () => video.play().catch(() => {});
     tryPlay();
     video.addEventListener("loadedmetadata", tryPlay);
@@ -24,13 +30,14 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="px-3">
-      <div className="relative overflow-hidden rounded-[2rem] bg-ink">
-        {/* Vidéo bannière de l'association — source allégée sur mobile pour une lecture fluide en boucle */}
+    <section className="px-0 sm:px-3">
+      <div className="relative overflow-hidden rounded-none bg-ink sm:rounded-[2rem]">
+        {/* Vidéo bannière de l'association — plein écran sur mobile, source allégée choisie en JS */}
         <video
           ref={videoRef}
           className="absolute inset-0 size-full object-cover"
           poster={SITE.banniereVideoPoster}
+          src={SITE.banniereVideoMobile}
           autoPlay
           muted
           loop
@@ -38,13 +45,10 @@ export function Hero() {
           preload="auto"
           disablePictureInPicture
           disableRemotePlayback
-        >
-          <source src={SITE.banniereVideoMobile} media="(max-width: 767px)" type="video/mp4" />
-          <source src={SITE.banniereVideo} type="video/mp4" />
-        </video>
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/65 to-ink/30" />
 
-        <div className="container-careloop relative flex min-h-[80vh] flex-col justify-end pb-16 pt-32">
+        <div className="container-careloop relative flex min-h-[100dvh] flex-col justify-end pb-16 pt-32 sm:min-h-[80vh]">
           <Reveal>
             <span className="inline-block rounded-full bg-cream/15 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-cream">
               {SITE.devise}
