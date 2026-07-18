@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, MapPin, Mail, Phone, ChevronDown } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { Pill } from "@/components/ui/Pill";
@@ -10,6 +11,9 @@ import { NAV, CONTACT } from "@/data/aseguim";
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [mobileTeamOpen, setMobileTeamOpen] = useState(false);
+  // Sur l'accueil, la nav mobile est posée sur la vidéo de la bannière :
+  // wordmark en cream sur mobile, ink dès qu'on repasse sur fond crème (≥ sm).
+  const onHome = usePathname() === "/";
 
   return (
     <header className="relative z-40">
@@ -38,8 +42,8 @@ export function Navbar() {
       </div>
 
       {/* Navigation — défile avec la page (non fixe) */}
-      <nav className="container-careloop mt-9 flex items-center justify-between py-4 sm:mt-10">
-        <Logo />
+      <nav className="container-careloop relative z-40 mt-9 flex items-center justify-between py-4 sm:mt-10">
+        <Logo wordmarkClassName={onHome ? "text-cream sm:text-ink" : undefined} />
 
         <ul className="hidden items-center gap-7 lg:flex">
           {NAV.map((item) =>

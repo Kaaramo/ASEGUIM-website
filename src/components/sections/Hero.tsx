@@ -28,21 +28,41 @@ export function Hero() {
     video.defaultMuted = true;
     video.setAttribute("muted", "");
     video.playsInline = true;
+    video.loop = true;
 
-    const tryPlay = () => {
-      const p = video.play();
-      if (p) p.catch(() => {});
+    // Boucle robuste et sans faille : on ne se repose pas uniquement sur
+    // l'attribut `loop` (ignoré par certains navigateurs mobiles après un
+    // "stall"). On relance dès que la vidéo se met en pause, se termine ou
+    // se bloque, et un watchdog vérifie en continu qu'elle tourne toujours.
+    const keepPlaying = () => {
+      if (document.hidden) return; // on laisse le navigateur mettre en pause quand l'onglet est masqué
+      if (video.ended || video.currentTime >= (video.duration || Infinity) - 0.05) {
+        video.currentTime = 0;
+      }
+      if (video.paused) {
+        const p = video.play();
+        if (p) p.catch(() => {});
+      }
     };
 
-    tryPlay();
-    video.addEventListener("loadedmetadata", tryPlay);
-    video.addEventListener("canplay", tryPlay);
-    document.addEventListener("visibilitychange", tryPlay);
+    const onEnded = () => {
+      video.currentTime = 0;
+      keepPlaying();
+    };
 
-    // Filet de sécurité : si l'autoplay est bloqué (mode éco iOS, etc.), on
-    // relance à la première interaction de l'utilisateur, puis on se nettoie.
+    keepPlaying();
+    video.addEventListener("loadedmetadata", keepPlaying);
+    video.addEventListener("canplay", keepPlaying);
+    video.addEventListener("ended", onEnded);
+    video.addEventListener("pause", keepPlaying);
+    video.addEventListener("stalled", keepPlaying);
+    video.addEventListener("waiting", keepPlaying);
+    document.addEventListener("visibilitychange", keepPlaying);
+
+    // Filet de sécurité : si l'autoplay reste bloqué (mode éco iOS, etc.), on
+    // relance à la première interaction de l'utilisateur.
     const onFirstInteract = () => {
-      tryPlay();
+      keepPlaying();
       window.removeEventListener("touchstart", onFirstInteract);
       window.removeEventListener("scroll", onFirstInteract);
       window.removeEventListener("pointerdown", onFirstInteract);
@@ -51,10 +71,18 @@ export function Hero() {
     window.addEventListener("scroll", onFirstInteract, { passive: true });
     window.addEventListener("pointerdown", onFirstInteract);
 
+    // Watchdog : garantit une lecture ininterrompue même si un événement est manqué.
+    const watchdog = window.setInterval(keepPlaying, 1500);
+
     return () => {
-      video.removeEventListener("loadedmetadata", tryPlay);
-      video.removeEventListener("canplay", tryPlay);
-      document.removeEventListener("visibilitychange", tryPlay);
+      window.clearInterval(watchdog);
+      video.removeEventListener("loadedmetadata", keepPlaying);
+      video.removeEventListener("canplay", keepPlaying);
+      video.removeEventListener("ended", onEnded);
+      video.removeEventListener("pause", keepPlaying);
+      video.removeEventListener("stalled", keepPlaying);
+      video.removeEventListener("waiting", keepPlaying);
+      document.removeEventListener("visibilitychange", keepPlaying);
       window.removeEventListener("touchstart", onFirstInteract);
       window.removeEventListener("scroll", onFirstInteract);
       window.removeEventListener("pointerdown", onFirstInteract);
@@ -62,7 +90,9 @@ export function Hero() {
   }, []);
 
   return (
-    <section className="px-0 sm:px-3">
+    // Mobile : la bannière remonte sous le bandeau de contact pour que le logo
+    // et le menu reposent directement sur la vidéo (pas d'espace crème avant).
+    <section className="-mt-[72px] px-0 sm:mt-0 sm:px-3">
       {/*
         Mobile  : plein cadre, hauteur stable (svh — ne bouge pas au scroll),
                   la vidéo couvre toute la bannière.
@@ -86,8 +116,10 @@ export function Hero() {
           tabIndex={-1}
         />
 
+        {/* Voile haut (mobile) : lisibilité du logo + menu posés sur la vidéo */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-44 bg-gradient-to-b from-ink/75 via-ink/25 to-transparent sm:hidden" />
         {/* Dégradé mobile : vertical, lisibilité du texte en bas */}
-        <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/45 to-ink/15 sm:hidden" />
+        <div className="absolute inset-0 bg-gradient-to-t from-ink/95 via-ink/45 to-ink/10 sm:hidden" />
         {/* Dégradé desktop : horizontal depuis la gauche */}
         <div className="absolute inset-0 hidden bg-gradient-to-r from-ink/90 via-ink/65 to-ink/30 sm:block" />
 
