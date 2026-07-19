@@ -12,12 +12,13 @@ export function Hero() {
     const video = videoRef.current;
     if (!video) return;
 
-    // Le support de <source media="..."> est peu fiable sur mobile : on choisit
-    // la source explicitement en JS (légère sur mobile, HD sur desktop).
+    // La source mobile (légère) est déjà dans le markup : l'autoplay natif
+    // démarre seul dès le chargement. On ne bascule QUE sur desktop vers le
+    // fichier HD — et surtout on ne rappelle JAMAIS load() sur mobile, car cela
+    // couperait l'autoplay natif et forcerait à scroller pour lancer la vidéo.
     const isDesktop = window.matchMedia("(min-width: 768px)").matches;
-    const desiredSrc = isDesktop ? SITE.banniereVideo : SITE.banniereVideoMobile;
-    if (!video.currentSrc || !video.currentSrc.endsWith(desiredSrc)) {
-      video.src = desiredSrc;
+    if (isDesktop && !video.currentSrc.endsWith(SITE.banniereVideo)) {
+      video.src = SITE.banniereVideo;
       video.load();
     }
 
