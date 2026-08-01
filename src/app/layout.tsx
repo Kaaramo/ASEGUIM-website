@@ -23,7 +23,6 @@ export const metadata: Metadata = {
   title: "ASEGUIM — Association des Stagiaires et Étudiants Guinéens au Maroc",
   description:
     "L'ASEGUIM est le pont d'excellence entre la réussite académique et l'épanouissement culturel des étudiants guinéens au Maroc. Depuis 1981.",
-  icons: { icon: "/aseguim/images/logo.jpeg" },
   openGraph: {
     title: "ASEGUIM — Façonnons l'Avenir Ensemble",
     description: "La plateforme de référence des étudiants guinéens au Maroc.",

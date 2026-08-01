@@ -21,6 +21,19 @@ export function OrgFanConnector({ height = 72 }: { height?: number }) {
   );
 }
 
+/** One point fanning out into two smooth branches (Président → row of 2). */
+export function OrgFanConnectorPair({ height = 72 }: { height?: number }) {
+  return (
+    <div className="relative mx-auto hidden w-full lg:block" style={{ height }} aria-hidden>
+      <svg viewBox="0 0 300 100" preserveAspectRatio="none" className="absolute inset-0 h-full w-full overflow-visible">
+        <path d="M150,0 C150,55 75,45 75,100" className="org-path" vectorEffect="non-scaling-stroke" fill="none" />
+        <path d="M150,0 C150,55 225,45 225,100" className="org-path" vectorEffect="non-scaling-stroke" fill="none" />
+      </svg>
+      <span className="org-node absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2" />
+    </div>
+  );
+}
+
 /** Three parallel column connectors (row of 3 → row of 3 directly below). */
 export function OrgColumnsConnector({ height = 56 }: { height?: number }) {
   return (

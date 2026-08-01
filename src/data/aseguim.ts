@@ -96,8 +96,6 @@ export const PARTENAIRES = [
   { nom: "SUP MTI", logo: "/aseguim/images/partners/sup-mti.jpg", recent: true },
 ];
 
-const CL = "https://res.cloudinary.com/dlikl4ilr/image/upload";
-
 export const BUREAU = [
   {
     nom: "SYLLA Mohamed",
@@ -114,9 +112,22 @@ export const BUREAU = [
 ];
 
 export const CONSEIL_CONSULTATIF = [
-  { nom: "Sékouba Doukouré", role: "Président du Conseil Consultatif", image: `${CL}/v1750794392/CC_pr%C3%A9si_e0zdbq.jpg` },
-  { nom: "Aïssatou Lamarana Diallo", role: "Chargée aux Rapports des Activités", image: `${CL}/v1750778594/A%C3%AFcha_xef3fi.jpg` },
-  { nom: "Elhadj Mamadou Lamarana Bah", role: "Chargé aux Rapports Financiers", image: `${CL}/v1750778701/El_hadj_sdonme.jpg` },
+  {
+    nom: "Mamadou Youssouf DIALLO",
+    role: "Président",
+    image: "/aseguim/images/conseil-2026/diallo-mamadou-youssouf.jpeg",
+    featured: true,
+  },
+  {
+    nom: "Alhoussaine BARRY",
+    role: "Chargé aux rapports des activités",
+    image: "/aseguim/images/conseil-2026/barry-alhoussaine.jpeg",
+  },
+  {
+    nom: "Oumar DIALLO",
+    role: "Chargé aux rapports financiers",
+    image: "/aseguim/images/conseil-2026/diallo-oumar.jpeg",
+  },
 ];
 
 export const COMMISSION_SCIENTIFIQUE = {
