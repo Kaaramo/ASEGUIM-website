@@ -111,21 +111,26 @@ export const BUREAU = [
   { nom: "CONDÉ Issa Mohamed", role: "Chargé social et administratif", image: "/aseguim/images/bureau-2026/conde-issa-mohamed.jpeg" },
 ];
 
+export const CONSEIL_CONSULTATIF_FACEBOOK = "https://www.facebook.com/share/14havq4bKo7/";
+
 export const CONSEIL_CONSULTATIF = [
   {
     nom: "Mamadou Youssouf DIALLO",
     role: "Président",
+    tel: "+212 713 042 258",
     image: "/aseguim/images/conseil-2026/diallo-mamadou-youssouf.jpeg",
     featured: true,
   },
   {
     nom: "Alhoussaine BARRY",
     role: "Chargé aux rapports des activités",
+    tel: "+212 646 171 127",
     image: "/aseguim/images/conseil-2026/barry-alhoussaine.jpeg",
   },
   {
     nom: "Oumar DIALLO",
     role: "Chargé aux rapports financiers",
+    tel: "+212 693 301 991",
     image: "/aseguim/images/conseil-2026/diallo-oumar.jpeg",
   },
 ];

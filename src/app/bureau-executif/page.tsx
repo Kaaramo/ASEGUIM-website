@@ -41,7 +41,9 @@ export default function BureauExecutif() {
 
           <OrgFanConnector />
 
-          <div className="grid gap-6 sm:grid-cols-2 sm:gap-8 lg:grid-cols-3 lg:gap-10">
+          {/* Le connecteur d'organigramme est masqué sous lg : on rétablit l'espace
+              entre le SG et la première rangée avec une marge mobile/tablette. */}
+          <div className="mt-12 grid gap-10 sm:mt-14 sm:grid-cols-2 sm:gap-8 lg:mt-0 lg:grid-cols-3 lg:gap-10">
             {row1.map((m, i) => {
               // Sur mobile (une seule colonne), le SGA doit apparaître avant la chargée de communication.
               // À partir de sm: (grille multi-colonnes), on revient à l'ordre d'origine.
@@ -60,7 +62,7 @@ export default function BureauExecutif() {
 
           <OrgColumnsConnector />
 
-          <div className="mt-8 grid gap-6 sm:grid-cols-2 sm:gap-8 lg:mt-0 lg:grid-cols-3 lg:gap-10">
+          <div className="mt-10 grid gap-10 sm:grid-cols-2 sm:gap-8 lg:mt-0 lg:grid-cols-3 lg:gap-10">
             {row2.map((m, i) => (
               <Reveal key={m.nom} delay={(i % 3) * 80}>
                 <TeamCard name={m.nom} role={m.role} image={m.image} />
