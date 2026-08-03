@@ -52,6 +52,9 @@ export const ASEGUIM_2040 = {
   href: "https://2040.aseguim.com",
   // Passer à false pour repasser le bouton en badge « Bientôt disponible ».
   enLigne: true,
+  // Masque toute la section « Pour aller plus loin » sur la page du guide.
+  // Repasser à true au signal pour la faire réapparaître (rien d'autre à toucher).
+  visible: false,
 };
 
 export const HISTOIRE = {

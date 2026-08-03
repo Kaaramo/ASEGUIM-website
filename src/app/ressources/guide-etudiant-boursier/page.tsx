@@ -145,7 +145,9 @@ export default function GuideEtudiantBoursier() {
         </div>
       </section>
 
-      {/* Pour aller plus loin — ASEGUIM 2040 (plateforme distincte du site) */}
+      {/* Pour aller plus loin — ASEGUIM 2040 (plateforme distincte du site).
+          Masquée tant que ASEGUIM_2040.visible est à false. */}
+      {ASEGUIM_2040.visible && (
       <section className="section-y pt-0">
         <div className="container-careloop">
           <Reveal>
@@ -202,6 +204,7 @@ export default function GuideEtudiantBoursier() {
           </Reveal>
         </div>
       </section>
+      )}
 
       <CtaBanner
         title="Une question qui n'est pas dans le guide ?"
