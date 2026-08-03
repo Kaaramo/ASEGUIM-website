@@ -10,7 +10,8 @@ import { NAV, CONTACT } from "@/data/aseguim";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
-  const [mobileTeamOpen, setMobileTeamOpen] = useState(false);
+  // Un seul sous-menu mobile ouvert à la fois, identifié par son label.
+  const [mobileSub, setMobileSub] = useState<string | null>(null);
   // Sur l'accueil, la nav mobile est posée sur la vidéo de la bannière :
   // wordmark en cream sur mobile, ink dès qu'on repasse sur fond crème (≥ sm).
   const onHome = usePathname() === "/";
@@ -56,7 +57,8 @@ export function Navbar() {
                   {item.label}
                   <ChevronDown className="size-3.5 transition-transform group-hover:rotate-180" />
                 </button>
-                <ul className="invisible absolute left-0 top-full min-w-[13rem] rounded-2xl bg-white p-2 opacity-0 shadow-[0_10px_30px_rgba(17,42,32,0.15)] transition-all duration-150 group-hover:visible group-hover:opacity-100">
+                {/* max-w : les intitulés longs passent à la ligne au lieu d'élargir le menu hors écran. */}
+                <ul className="invisible absolute left-0 top-full min-w-[13rem] max-w-[17rem] rounded-2xl bg-white p-2 opacity-0 shadow-[0_10px_30px_rgba(17,42,32,0.15)] transition-all duration-150 group-hover:visible group-hover:opacity-100">
                   {item.children.map((child) => (
                     <li key={child.href}>
                       <Link
@@ -108,13 +110,15 @@ export function Navbar() {
                   <li key={item.href}>
                     <button
                       type="button"
-                      onClick={() => setMobileTeamOpen((v) => !v)}
+                      onClick={() => setMobileSub((v) => (v === item.label ? null : item.label))}
                       className="flex w-full items-center justify-between text-lg font-semibold text-ink"
                     >
                       {item.label}
-                      <ChevronDown className={`size-4 transition-transform ${mobileTeamOpen ? "rotate-180" : ""}`} />
+                      <ChevronDown
+                        className={`size-4 transition-transform ${mobileSub === item.label ? "rotate-180" : ""}`}
+                      />
                     </button>
-                    {mobileTeamOpen && (
+                    {mobileSub === item.label && (
                       <ul className="mt-3 flex flex-col gap-3 pl-4">
                         {item.children.map((child) => (
                           <li key={child.href}>

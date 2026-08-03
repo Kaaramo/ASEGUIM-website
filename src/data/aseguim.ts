@@ -27,7 +27,30 @@ export const NAV = [
     ],
   },
   { label: "Nos domaines", href: "/nos-domaines" },
+  {
+    label: "Ressources",
+    href: "/ressources/guide-etudiant-boursier",
+    children: [
+      { label: "Guide de l'Étudiant Guinéen Boursier au Maroc", href: "/ressources/guide-etudiant-boursier" },
+    ],
+  },
 ];
+
+/** Guide officiel hébergé sur Google Drive (consultation en ligne, hors du site). */
+export const GUIDE_BOURSIER = {
+  titre: "Guide de l'Étudiant Guinéen Boursier au Maroc",
+  fichier: "Guide de l'Etudiant Boursier Guinéen au Maroc.pdf",
+  href: "https://drive.google.com/file/d/1TzFSZoszuvGb0xCd65zzAkTmthWTEy7h/view",
+};
+
+/** ASEGUIM 2040 — assistant d'orientation IA, plateforme distincte du site vitrine. */
+export const ASEGUIM_2040 = {
+  nom: "ASEGUIM 2040",
+  domaine: "2040.aseguim.com",
+  href: "https://2040.aseguim.com",
+  // Passer à true le jour de la mise en ligne pour transformer le badge en lien cliquable.
+  enLigne: false,
+};
 
 export const HISTOIRE = {
   titre: "Notre Histoire",
@@ -219,6 +242,7 @@ export const FOOTER = {
     { label: "Conseil Consultatif", href: "/conseil-consultatif" },
   ],
   liensUtiles: [
+    { label: "Guide de l'étudiant boursier", href: "/ressources/guide-etudiant-boursier" },
     { label: "Ambassade de Guinée au Maroc", href: "https://web.facebook.com/ambaguirabat/", external: true },
     { label: "SNABE", href: "https://snabe.gov.gn/", external: true },
     { label: "PayCard", href: "https://paycard.co/", external: true },
