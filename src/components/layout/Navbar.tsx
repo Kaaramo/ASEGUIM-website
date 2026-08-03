@@ -63,7 +63,7 @@ export function Navbar() {
                     <li key={child.href}>
                       <Link
                         href={child.href}
-                        className="block rounded-xl px-4 py-2.5 text-sm font-semibold text-ink/80 transition-colors hover:bg-cream hover:text-ink"
+                        className="block rounded-xl px-4 py-2.5 text-sm font-semibold text-green-700 underline decoration-green-700/30 underline-offset-4 transition-colors hover:bg-cream hover:text-orange hover:decoration-orange"
                       >
                         {child.label}
                       </Link>
@@ -125,7 +125,7 @@ export function Navbar() {
                             <Link
                               href={child.href}
                               onClick={() => setOpen(false)}
-                              className="text-base font-semibold text-ink/70"
+                              className="text-base font-semibold text-green-700 underline decoration-green-700/30 underline-offset-4"
                             >
                               {child.label}
                             </Link>

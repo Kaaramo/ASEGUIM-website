@@ -31,15 +31,17 @@ export const NAV = [
     label: "Ressources",
     href: "/ressources/guide-etudiant-boursier",
     children: [
-      { label: "Guide de l'Étudiant Guinéen Boursier au Maroc", href: "/ressources/guide-etudiant-boursier" },
+      { label: "Guide de l'Étudiant Boursier Guinéen au Maroc", href: "/ressources/guide-etudiant-boursier" },
     ],
   },
 ];
 
 /** Guide officiel hébergé sur Google Drive (consultation en ligne, hors du site). */
 export const GUIDE_BOURSIER = {
-  titre: "Guide de l'Étudiant Guinéen Boursier au Maroc",
-  fichier: "Guide de l'Etudiant Boursier Guinéen au Maroc.pdf",
+  titre: "Guide de l'Étudiant Boursier Guinéen au Maroc",
+  edition: "Édition 2026-2027",
+  editeur: "ASEGUIM Centrale · SNABE · RPG",
+  pages: 105,
   href: "https://drive.google.com/file/d/1TzFSZoszuvGb0xCd65zzAkTmthWTEy7h/view",
 };
 
@@ -48,8 +50,8 @@ export const ASEGUIM_2040 = {
   nom: "ASEGUIM 2040",
   domaine: "2040.aseguim.com",
   href: "https://2040.aseguim.com",
-  // Passer à true le jour de la mise en ligne pour transformer le badge en lien cliquable.
-  enLigne: false,
+  // Passer à false pour repasser le bouton en badge « Bientôt disponible ».
+  enLigne: true,
 };
 
 export const HISTOIRE = {
