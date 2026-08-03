@@ -47,7 +47,7 @@ const POINTS_2040 = [
   { icon: GraduationCap, titre: "Il connaît votre dossier", texte: "Votre rang, votre mention et votre option, à partir du numéro de PV." },
   { icon: Target, titre: "Des attentes réalistes", texte: "Le classement relatif et les quotas par option, pas seulement la mention." },
   { icon: Sparkles, titre: "Plusieurs voies", texte: "Prépa, école à prépa intégrée, université : chaque piste argumentée." },
-  { icon: MessageCircle, titre: "Quand vous voulez", texte: "En français, sur mobile, autant de fois que nécessaire." },
+  { icon: MessageCircle, titre: "Quand vous voulez", texte: "En français, sur mobile comme sur ordinateur." },
 ];
 
 export default function GuideEtudiantBoursier() {
@@ -178,9 +178,6 @@ export default function GuideEtudiantBoursier() {
               <Reveal delay={160} className="mx-auto mt-12 max-w-3xl rounded-[1.5rem] bg-cream/5 p-6 text-center sm:p-8">
                 <p className="font-display text-xl tracking-wide text-cream sm:text-2xl">
                   « Mettre notre expertise au service de la nation. »
-                </p>
-                <p className="mt-3 text-sm text-cream/60">
-                  Projet d&apos;intérêt général financé par le SNABE, sur une plateforme indépendante du site.
                 </p>
                 <div className="mt-6 flex flex-col items-center gap-3">
                   {ASEGUIM_2040.enLigne ? (
