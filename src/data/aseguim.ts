@@ -1,6 +1,9 @@
 // Contenu réel de l'ASEGUIM (Association des Stagiaires et Étudiants Guinéens au Maroc).
 // Source : projet ASEGUIM existant de l'utilisateur.
 
+/** Domaine canonique du site (utilisé par les métadonnées, le sitemap et le JSON-LD). */
+export const SITE_URL = "https://www.aseguim.com";
+
 export const SITE = {
   nom: "ASEGUIM",
   nomComplet: "Association des Stagiaires et Étudiants Guinéens au Maroc",
@@ -13,6 +16,20 @@ export const SITE = {
   banniereVideo: "/aseguim/videos/banniere.mp4",
   banniereVideoMobile: "/aseguim/videos/banniere-mobile.mp4",
   banniereVideoPoster: "/aseguim/videos/banniere-poster.jpg",
+};
+
+/** ASEGUIM 2040 — assistant d'orientation IA, plateforme distincte du site vitrine. */
+export const ASEGUIM_2040 = {
+  nom: "ASEGUIM 2040",
+  domaine: "2040.aseguim.com",
+  href: "https://2040.aseguim.com",
+  // Page dédiée sur le site, qui renvoie vers la plateforme.
+  page: "/aseguim-2040",
+  // Passer à false pour repasser le bouton en badge « Bientôt disponible ».
+  enLigne: true,
+  // Masque la page dédiée, la mise en avant sur l'accueil, l'entrée de
+  // navigation et la section du guide. Une seule ligne à basculer.
+  visible: true,
 };
 
 export const NAV = [
@@ -32,6 +49,9 @@ export const NAV = [
     href: "/ressources/guide-etudiant-boursier",
     children: [
       { label: "Guide de l'Étudiant Boursier Guinéen au Maroc", href: "/ressources/guide-etudiant-boursier" },
+      ...(ASEGUIM_2040.visible
+        ? [{ label: `${ASEGUIM_2040.nom} — Assistant IA`, href: ASEGUIM_2040.page }]
+        : []),
     ],
   },
 ];
@@ -43,18 +63,6 @@ export const GUIDE_BOURSIER = {
   editeur: "ASEGUIM Centrale · SNABE · RPG",
   pages: 105,
   href: "https://drive.google.com/file/d/1TzFSZoszuvGb0xCd65zzAkTmthWTEy7h/view",
-};
-
-/** ASEGUIM 2040 — assistant d'orientation IA, plateforme distincte du site vitrine. */
-export const ASEGUIM_2040 = {
-  nom: "ASEGUIM 2040",
-  domaine: "2040.aseguim.com",
-  href: "https://2040.aseguim.com",
-  // Passer à false pour repasser le bouton en badge « Bientôt disponible ».
-  enLigne: true,
-  // Masque toute la section « Pour aller plus loin » sur la page du guide.
-  // Repasser à true au signal pour la faire réapparaître (rien d'autre à toucher).
-  visible: false,
 };
 
 export const HISTOIRE = {
